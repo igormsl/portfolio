@@ -19,7 +19,7 @@
             "compositing"
           ],
           "orient": "v",
-          "state": "placeholder"
+          "state": "ready"
         },
         {
           "slug": "ai-cartoon",
@@ -33,7 +33,7 @@
             "sound design"
           ],
           "orient": "v",
-          "state": "placeholder"
+          "state": "ready"
         },
         {
           "slug": "ai-intro-headliners",
@@ -47,7 +47,7 @@
             "брендинг"
           ],
           "orient": "h",
-          "state": "placeholder"
+          "state": "ready"
         }
       ]
     },
@@ -84,7 +84,7 @@
             "sound design"
           ],
           "orient": "h",
-          "state": "placeholder"
+          "state": "ready"
         }
       ]
     },
@@ -107,7 +107,7 @@
             "Premiere Pro"
           ],
           "orient": "h",
-          "state": "placeholder"
+          "state": "ready"
         },
         {
           "slug": "motion-figma-banner",
@@ -121,7 +121,7 @@
             "brand"
           ],
           "orient": "v",
-          "state": "placeholder"
+          "state": "ready"
         },
         {
           "slug": "motion-vertical-ae",
@@ -135,7 +135,7 @@
             "графика с нуля"
           ],
           "orient": "v",
-          "state": "placeholder"
+          "state": "ready"
         }
       ]
     },
@@ -158,7 +158,7 @@
             "shorts"
           ],
           "orient": "v",
-          "state": "placeholder"
+          "state": "ready"
         },
         {
           "slug": "shorts-edu-channel",
@@ -172,7 +172,7 @@
             "shorts"
           ],
           "orient": "v",
-          "state": "placeholder"
+          "state": "ready"
         },
         {
           "slug": "shorts-new-year",
@@ -186,7 +186,7 @@
             "shorts"
           ],
           "orient": "v",
-          "state": "placeholder"
+          "state": "ready"
         }
       ]
     },
@@ -209,7 +209,7 @@
             "скринкаст"
           ],
           "orient": "h",
-          "state": "placeholder"
+          "state": "ready"
         },
         {
           "slug": "edu-trading-motion",
