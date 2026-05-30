@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Игорь Масляков — Видеомонтаж · Motion · AI</title>
+<meta name="description" content="Игорь Масляков — видеомонтажёр, руководитель пост-продакшена и AI-креатор. Showreel, AI-контент, motion-дизайн, event-films.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E0E12; --bg2:#121217; --card:#15151b;
+    --ink:#FBF8F1; --muted:#A8A398; --faint:#56544B;
+    --gold:#F0BE5A; --ember:#E2703F; --line:rgba(255,255,255,.11);
+    --disp:"Bricolage Grotesque",sans-serif; --sans:"Hanken Grotesk",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(900px 640px at 88% -10%,rgba(240,190,90,.16),transparent 60%),radial-gradient(820px 700px at -8% 30%,rgba(226,112,63,.12),transparent 58%)}
+  body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 30px}
+  a{color:inherit;text-decoration:none}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:30;backdrop-filter:blur(10px);
+    background:linear-gradient(180deg,rgba(14,14,18,.86),rgba(14,14,18,.34));border-bottom:1px solid transparent;transition:.3s}
+  nav.scrolled{border-bottom-color:var(--line);background:rgba(12,12,16,.9)}
+  .nav-in{max-width:1180px;margin:0 auto;padding:16px 30px;display:flex;justify-content:space-between;align-items:center}
+  .logo{font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.01em}
+  .logo span{color:var(--gold)}
+  .nav-links{display:flex;gap:26px;font-size:13.5px;letter-spacing:.04em;color:var(--muted)}
+  .nav-links a{transition:.2s}.nav-links a:hover{color:var(--ink)}
+  .nav-cta{font-size:13px;border:1px solid var(--line);padding:8px 16px;border-radius:100px;color:var(--ink);transition:.2s}
+  .nav-cta:hover{background:var(--gold);color:#1a1407;border-color:var(--gold)}
+  @media(max-width:780px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 70px;position:relative}
+  .eyebrow{font-size:14px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:26px;text-shadow:0 0 22px rgba(240,190,90,.3)}
+  .name{font-family:var(--disp);font-weight:300;font-size:clamp(58px,11vw,150px);line-height:.84;letter-spacing:-.03em;text-shadow:0 4px 50px rgba(0,0,0,.5)}
+  .name .b{display:block;font-weight:700}
+  .name .b em{font-style:normal;background:linear-gradient(96deg,#FCE3A6,#F0BE5A 42%,#E2703F);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 26px rgba(240,190,90,.4))}
+  .role{margin-top:30px;font-size:clamp(18px,2.4vw,25px);color:#E4E0D6;max-width:680px}
+  .role b{color:#fff;font-weight:600}
+  .sub{margin-top:22px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+  .pill{border:1px solid var(--line);border-radius:100px;padding:7px 16px;color:#E4E0D6;background:rgba(255,255,255,.025)}
+  .sep{color:var(--faint)}
+  .stats{display:flex;gap:18px;flex-wrap:wrap;margin-top:46px}
+  .stat{flex:1;min-width:200px;border:1px solid var(--line);border-left:2px solid var(--gold);border-radius:4px;padding:20px 22px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.005))}
+  .stat .n{font-family:var(--disp);font-weight:700;font-size:40px;line-height:1;letter-spacing:-.02em}
+  .stat .n span{background:linear-gradient(96deg,#FCE3A6,#F0BE5A);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .c{margin-top:9px;font-size:14px;color:var(--muted);line-height:1.4}
+  .tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+  .tools .t{font-size:13px;color:#D6D2C8;border:1px solid var(--line);border-radius:4px;padding:6px 13px;background:rgba(255,255,255,.02)}
+  .tools .t.ai{color:var(--gold);border-color:rgba(240,190,90,.36);background:rgba(240,190,90,.08)}
+
+  /* portrait */
+  .id-row{display:flex;gap:36px;align-items:center;margin-top:36px}
+  @media(max-width:680px){.id-row{flex-direction:column;align-items:flex-start;gap:24px}}
+  .hero-portrait{position:relative;flex:none;width:252px;aspect-ratio:4/5;border-radius:14px;overflow:hidden;
+    border:1px solid var(--line);background:var(--card);
+    box-shadow:0 34px 80px rgba(0,0,0,.55), 0 0 60px rgba(240,190,90,.06)}
+  .hero-portrait::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:14px;
+    box-shadow:inset 0 -90px 80px rgba(14,14,18,.5), inset 0 0 0 1px rgba(240,190,90,.13)}
+  .hero-portrait img{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover}
+  .portrait-ph{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+    background:repeating-linear-gradient(45deg,rgba(255,255,255,.013) 0 14px,transparent 14px 28px),linear-gradient(160deg,#181820,#0d0d11)}
+  .portrait-ph svg{width:56px;height:56px;stroke:var(--gold);opacity:.9}
+  .portrait-ph .pl{text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);line-height:1.7}
+  .portrait-ph .pl b{display:block;color:var(--gold);font-weight:600;letter-spacing:.03em;text-transform:none;font-size:14px;margin-bottom:3px}
+  .id-meta{flex:1}
+  .id-meta .role{margin-top:0}
+  .id-meta .sub{margin-top:18px}
+
+  /* sections */
+  .section{padding:90px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:20px;margin-bottom:14px}
+  .sec-num{font-family:var(--disp);font-weight:300;font-size:clamp(34px,6vw,64px);color:var(--faint);line-height:.8}
+  .sec-title{font-family:var(--disp);font-weight:600;font-size:clamp(26px,4.4vw,46px);letter-spacing:-.01em}
+  .sec-desc{color:#CFCBC1;max-width:720px;font-size:16.5px;margin-bottom:40px}
+  .sec-cat{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+
+  /* work grid */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+  @media(max-width:780px){.grid{grid-template-columns:1fr}}
+  .work{display:flex;flex-direction:column}
+  .work.tall{grid-row:span 1}
+  .frame{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a0a0e;aspect-ratio:16/9}
+  .frame.v{aspect-ratio:9/16;max-width:330px}
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:7}
+  /* premium placeholder — Aurora + живой ambient-клип, видно что там видео */
+  .frame .amb{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;opacity:.62;filter:saturate(1.05) contrast(1.02)}
+  .frame .aurora{position:absolute;inset:-45%;z-index:2;filter:saturate(1.35) blur(12px);opacity:.55;mix-blend-mode:soft-light;
+    background:conic-gradient(from 0deg at 50% 50%,#3a2150,#6a3a20,#b8823a,#3a2150,#1e3a52,#3a2150);animation:spin 17s linear infinite}
+  .frame .veil{position:absolute;inset:0;z-index:3;background:radial-gradient(72% 72% at 50% 46%,transparent,rgba(8,8,12,.66))}
+  .frame .grain{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .frame .pnum{position:absolute;top:12px;left:15px;z-index:5;font-family:var(--disp);font-size:26px;color:rgba(255,255,255,.6);text-shadow:0 2px 12px rgba(0,0,0,.55)}
+  .frame .badge{position:absolute;top:14px;right:14px;z-index:5;display:flex;gap:6px}
+  .frame .badge span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#eee;background:rgba(0,0,0,.42);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);padding:4px 8px;border-radius:4px}
+  .frame .badge .q{color:var(--gold);border-color:rgba(240,190,90,.42)}
+  .frame .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5}
+  .frame .play .ring{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
+    background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.46);box-shadow:0 10px 40px rgba(0,0,0,.4);transition:.4s}
+  .frame .play .tri{color:#fff;font-size:19px;margin-left:4px}
+  .work:hover .frame .play .ring{transform:scale(1.08);box-shadow:0 12px 52px rgba(240,190,90,.38);border-color:rgba(240,190,90,.72)}
+  @keyframes spin{to{transform:rotate(1turn)}}
+  .w-title{font-family:var(--disp);font-weight:600;font-size:20px;margin-top:18px;line-height:1.25}
+  .w-note{color:#BDB9AF;font-size:15px;margin-top:8px}
+  .w-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .w-tags span{font-size:11px;color:var(--gold);background:rgba(240,190,90,.07);border:1px solid rgba(240,190,90,.18);padding:3px 9px;border-radius:3px}
+
+  /* contact */
+  .contact{padding:100px 0 60px;border-top:1px solid var(--line);text-align:center}
+  .contact .big{font-family:var(--disp);font-weight:300;font-size:clamp(34px,7vw,76px);line-height:.95;letter-spacing:-.02em}
+  .contact .big em{font-style:normal;background:linear-gradient(96deg,#FCE3A6,#F0BE5A,#E2703F);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .contact .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+  .contact .links a{border:1px solid var(--line);border-radius:100px;padding:13px 26px;font-size:15px;transition:.2s}
+  .contact .links a:hover{background:var(--ink);color:#111;border-color:var(--ink)}
+  .contact .links a.primary{background:var(--gold);color:#1a1407;border-color:var(--gold)}
+  .contact .links a.primary:hover{filter:brightness(1.08)}
+  footer{padding:34px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:13px}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+  .nda{margin-top:30px;font-size:14px;color:var(--muted);border-left:2px solid var(--ember);padding:10px 18px;background:var(--bg2);border-radius:0 4px 4px 0;max-width:680px}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#top" class="logo">Игорь <span>Масляков</span></a>
+    <div class="nav-links">
+      <a href="#ai">AI-контент</a>
+      <a href="#event">Event Films</a>
+      <a href="#motion">Motion</a>
+      <a href="#shorts">Shorts</a>
+      <a href="#edu">Обучающее</a>
+    </div>
+    <a href="#contact" class="nav-cta">Связаться</a>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="eyebrow rv">Видеомонтаж · Motion · AI-контент</div>
+    <h1 class="name rv">Игорь<span class="b">Масл<em>яков</em></span></h1>
+    <div class="id-row rv">
+      <div class="hero-portrait">
+        <img src="photo.jpg" alt="Игорь Масляков" onerror="this.style.display='none'">
+        <div class="portrait-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c0-4.2 3.4-7 7.5-7s7.5 2.8 7.5 7"/></svg>
+          <div class="pl"><b>Фото сюда</b>положи photo.jpg рядом с index.html</div>
+        </div>
+      </div>
+      <div class="id-meta">
+        <p class="role"><b>Видеомонтажёр и руководитель пост-продакшена.</b> AI-креатор полного цикла — от идеи и промптов до финальной сборки.</p>
+        <div class="sub">
+          <span class="pill">24 года</span>
+          <span class="pill">Москва</span>
+          <span class="sep">·</span><span>в видео с 2022</span>
+          <span class="sep">·</span><a href="https://t.me/igor_msl" target="_blank" rel="noopener" style="color:var(--gold)">@igor_msl</a>
+        </div>
+      </div>
+    </div>
+    <div class="tools rv">
+      <span class="t">Premiere Pro</span><span class="t">After Effects</span><span class="t">DaVinci Resolve</span><span class="t">Photoshop</span><span class="t">Blender</span>
+      <span class="t ai">Higgsfield</span><span class="t ai">Kling</span><span class="t ai">Midjourney</span><span class="t ai">Nano Banana</span><span class="t ai">Suno</span><span class="t ai">HeyGen</span>
+    </div>
+    <div class="nda rv">Большая часть проектов под NDA — отдельные сильные кейсы показать не могу, но готов рассказать на созвоне в рамках допустимого.</div>
+  </header>
+
+  <main id="work-root"></main>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact rv" id="contact">
+    <div class="big">Соберём<br><em>ваш проект</em></div>
+    <div class="links">
+      <a href="https://t.me/igor_msl" class="primary" target="_blank">Telegram @igor_msl</a>
+      <a href="mailto:igor_msl@mail.ru">igor_msl@mail.ru</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Игорь Масляков</span>
+    <span>Видеомонтаж · Motion Design · AI-контент</span>
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   КАК ПОДСТАВИТЬ СВОИ ВИДЕО:
+   У каждой работы есть поле  vk: ''
+   Возьми ссылку VK-клипа vkvideo.ru/clip-202210095_XXXX — нужны последние ЦИФРЫ XXXX
+   (пример: clip-202210095_456239027 → 456239027)
+   и впиши их в кавычки:  vk: '456239027'
+   Пустое поле = красивая заглушка с кнопкой ▶.
+   ============================================================ */
+const CLIPS = ['clips/1.mp4']; // добавить остальные: 'clips/2.mp4','clips/3.mp4'... когда файлы будут на VPS
+const rndClip = () => CLIPS[Math.floor(Math.random()*CLIPS.length)];
+const VK_OID = '-202210095'; // владелец VK-клипов (группа CMSL)
+const SECTIONS = [
+  { id:'ai', num:'01', cat:'Generative AI', title:'AI-контент с нуля',
+    desc:'AI как полноценная производственная среда: промпты, контроль персонажей и локаций, монтаж и сборка в Premiere — лично. Начинал на ранних, ещё нестабильных, инструментах.',
+    works:[
+      {num:'01', title:'AI-аватар: цифровой персонаж под ключ', note:'Собрал виртуального героя целиком — внешность, характерная мимика, собственная локация и короткие сцены с движением. Консистентность персонажа от кадра к кадру держал вручную.', fmt:'16:9', vk:'456239027', tags:['prompt engineering','character design','консистентность','2D-анимация','compositing']},
+      {num:'02', title:'AI-мультсериал: анимированный нарратив', note:'Короткий сериал с авторским AI-персонажем, который ведёт историю по эпизодам. Генерация, отбор дублей и сборка драматургии в Premiere Pro.', fmt:'16:9', vk:'456239031', tags:['storytelling','AI-анимация','промптинг','монтаж нарратива','sound design']},
+      {num:'03', title:'Headliners — AI-интро для тизера', note:'Клиент пришёл за экспертизой в AI: завлекающее интро для тизера. Концепция, генеративная графика и motion-сборка — от идеи до мастера.', fmt:'16:9', vk:'456239034', tags:['motion design','generative graphics','title design','концепция','брендинг']},
+    ]},
+  { id:'event', num:'02', cat:'Event Films', title:'Международные конференции',
+    desc:'Большие массивы съёмочного материала: отбор сильных кадров, ритм, музыка, атмосфера события за минуту-полторы.',
+    works:[
+      {num:'01', title:'BlockChain 2024, Дубай — recap', note:'Из часов съёмки с конференции — динамичный recap на минуту. Отбор сильных кадров, ритм под музыку, ощущение масштаба события. Клиент — Headliners.', fmt:'16:9', vk:'456239019', tags:['event recap','отбор кадров','ритм монтажа','color grading','sound design']},
+    ]},
+  { id:'motion', num:'03', cat:'Motion Design', title:'Motion-дизайн и реклама',
+    desc:'Реклама, где motion — основа повествования. Анимация, движение объектов и графика лично в After Effects, сборка в Premiere. Горизонталь и вертикаль.',
+    works:[
+      {num:'01', title:'Реклама для англоязычного канала', note:'Рекламный ролик полного цикла: динамичный монтаж, авторский motion и плотный саунд-дизайн. В дело пошли собственные тревел-кадры. От концепта до мастера — один.', fmt:'16:9', vk:'456239032', tags:['motion design','sound design','brand video','монтаж','собственные стоки']},
+      {num:'02', title:'Баннер по макетам из Figma', note:'Вертикальный рекламный баннер собран с нуля по дизайн-макетам: анимация объектов, дополнительные элементы и тайминги — вручную в After Effects.', fmt:'9:16', vk:'456239026', tags:['motion design','After Effects','анимация объектов','работа по макетам','brand']},
+      {num:'03', title:'Вертикальная реклама в After Effects', note:'Короткая вертикаль, собранная целиком в After Effects без сторонних футажей — каждый элемент нарисован и анимирован вручную.', fmt:'9:16', vk:'456239024', tags:['After Effects','2D-анимация','motion design','vertical video','графика с нуля']},
+    ]},
+  { id:'shorts', num:'04', cat:'Vertical', title:'Shorts / вертикаль',
+    desc:'Перепаковать длинный материал в 30–60 секунд так, чтобы держал с первой секунды. Субтитры, motion-элементы, ритм речи.',
+    works:[
+      {num:'01', title:'Shorts для канала «Федос» (футбол)', note:'Вертикальные ролики под спортивный канал: графдизайн и motion-акценты усиливают подачу, нарезка держит темп с первого кадра.', fmt:'9:16', vk:'456239037', tags:['vertical video','motion graphics','графдизайн','ритм','shorts']},
+      {num:'02', title:'Shorts обучающего канала (бизнес/AI)', note:'Короткие выжимки для канала про бизнес и AI: субтитры, интеграция стоков и нарезка по ритму речи под максимальное удержание.', fmt:'9:16', vk:'456239025', tags:['subtitling','ритм речи','stock integration','retiming','shorts']},
+    ]},
+  { id:'edu', num:'05', cat:'Educational', title:'Обучающий контент',
+    desc:'Баланс темпа и понятности: motion помогает фокусироваться на смысле. Видеоинструкции с ручной анимацией и ролики с озвучкой.',
+    works:[
+      {num:'01', title:'Видеоинструкция по продукту', note:'Гайд по работе с сайтом: страницы, переходы и курсор анимированы вручную в After Effects из статичных скринов — живой интерфейс собран с нуля.', fmt:'16:9', vk:'456239036', tags:['UI-анимация','After Effects','motion design','инфографика','скринкаст']},
+      {num:'02', title:'Трейдинг-разбор с motion-подсветкой', note:'Ролик с озвучкой, где лёгкий motion подсвечивает ключевые элементы на экране — зритель не теряет фокус на объяснении.', fmt:'16:9', vk:'456239018', tags:['motion design','озвучка','выделение акцентов','screencast','pacing']},
+    ]},
+];
+
+function media(w){
+  const v = (w.fmt==='9:16') ? ' v' : '';
+  if(w.vimeo){
+    return `<div class="frame${v}"><iframe src="https://player.vimeo.com/video/${w.vimeo}?title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
+  }
+  return `<div class="frame ph${v}" data-vk="${w.vk||''}">
+    <video class="amb" src="${rndClip()}" autoplay muted loop playsinline preload="metadata"></video>
+    <div class="aurora"></div><div class="veil"></div><div class="grain"></div>
+    <span class="pnum">${w.num}</span>
+    <div class="badge"><span>${w.fmt}</span></div>
+    <div class="play"><div class="ring"><span class="tri">▶</span></div></div>
+  </div>`;
+}
+function workCard(w){
+  return `<article class="work rv">${media(w)}<h3 class="w-title">${w.title}</h3><p class="w-note">${w.note}</p><div class="w-tags">${w.tags.map(t=>`<span>${t}</span>`).join('')}</div></article>`;
+}
+function sectionHtml(s){
+  return `<section class="section" id="${s.id}">
+    <div class="sec-cat rv">${s.cat}</div>
+    <div class="sec-head rv"><span class="sec-num">${s.num}</span><h2 class="sec-title">${s.title}</h2></div>
+    <p class="sec-desc rv">${s.desc}</p>
+    <div class="grid">${s.works.map(workCard).join('')}</div>
+  </section>`;
+}
+document.getElementById('work-root').innerHTML = SECTIONS.map(sectionHtml).join('');
+
+/* ambient clips — крутятся как муteд-гифки; вне зоны видимости пауза (производительность) */
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:0,rootMargin:'400px 0px'});
+document.querySelectorAll('video.amb').forEach(v=>vio.observe(v));
+
+/* клик по карточке — в этой же рамке открывается VK-ролик (автоплей, со звуком) */
+document.querySelectorAll('.frame.ph[data-vk]').forEach(f=>{
+  const id=f.getAttribute('data-vk'); if(!id){return;}
+  f.style.cursor='pointer';
+  f.addEventListener('click',()=>{
+    const a=f.querySelector('video.amb'); if(a){a.pause();}
+    f.innerHTML='<iframe src="https://vk.com/video_ext.php?oid='+VK_OID+'&id='+id+'&hd=2&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;inset:0;width:100%;height:100%;border:0;z-index:9"></iframe>';
+  },{once:true});
+});
+
+/* nav scroll state */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40)});
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{io.observe(el)});
+/* stagger hero */
+document.querySelectorAll('.hero .rv').forEach((el,i)=>{el.style.transitionDelay=(i*0.08)+'s'});
+</script>
+</body>
+</html>
