@@ -1,0 +1,231 @@
+{
+  "sections": [
+    {
+      "id": "ai",
+      "num": "01",
+      "cat": "Generative AI",
+      "title": "AI-контент с нуля",
+      "desc": "AI как полноценная производственная среда: промпты, контроль персонажей и локаций, монтаж и сборка в Premiere — лично. Начинал на ранних, ещё нестабильных, инструментах.",
+      "works": [
+        {
+          "slug": "ai-avatar",
+          "title": "AI-аватар: цифровой персонаж под ключ",
+          "note": "Собрал виртуального героя целиком — внешность, характерная мимика, собственная локация и короткие сцены с движением. Консистентность персонажа от кадра к кадру держал вручную.",
+          "tags": [
+            "prompt engineering",
+            "character design",
+            "консистентность",
+            "2D-анимация",
+            "compositing"
+          ],
+          "orient": "v",
+          "state": "placeholder"
+        },
+        {
+          "slug": "ai-cartoon",
+          "title": "AI-мультсериал: анимированный нарратив",
+          "note": "Короткий сериал с авторским AI-персонажем, который ведёт историю по эпизодам. Генерация, отбор дублей и сборка драматургии в Premiere Pro.",
+          "tags": [
+            "storytelling",
+            "AI-анимация",
+            "промптинг",
+            "монтаж нарратива",
+            "sound design"
+          ],
+          "orient": "v",
+          "state": "placeholder"
+        },
+        {
+          "slug": "ai-intro-headliners",
+          "title": "Headliners — AI-интро для тизера",
+          "note": "Клиент пришёл за экспертизой в AI: завлекающее интро для тизера. Концепция, генеративная графика и motion-сборка — от идеи до мастера.",
+          "tags": [
+            "motion design",
+            "generative graphics",
+            "title design",
+            "концепция",
+            "брендинг"
+          ],
+          "orient": "h",
+          "state": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "event",
+      "num": "02",
+      "cat": "Event Films",
+      "title": "Международные конференции",
+      "desc": "Большие массивы съёмочного материала: отбор сильных кадров, ритм, музыка, атмосфера события за минуту-полторы.",
+      "works": [
+        {
+          "slug": "event-blockchain-dubai",
+          "title": "BlockChain 2024, Дубай — recap",
+          "note": "Из часов съёмки с конференции — динамичный recap на минуту. Отбор сильных кадров, ритм под музыку, ощущение масштаба события. Клиент — Headliners.",
+          "tags": [
+            "event recap",
+            "отбор кадров",
+            "ритм монтажа",
+            "color grading",
+            "sound design"
+          ],
+          "orient": "h",
+          "state": "placeholder"
+        },
+        {
+          "slug": "event-brazil-recap",
+          "title": "Бразилия — recap конференции",
+          "note": "Из массива съёмок конференции в Бразилии: отбор сильных кадров, музыка и аккуратные эффектные переходы со стоковым видео — отчётный ролик для заказчика.",
+          "tags": [
+            "event recap",
+            "отбор кадров",
+            "ритм монтажа",
+            "color grading",
+            "sound design"
+          ],
+          "orient": "h",
+          "state": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "num": "03",
+      "cat": "Motion Design",
+      "title": "Motion-дизайн и реклама",
+      "desc": "Реклама, где motion — основа повествования. Анимация, движение объектов и графика лично в After Effects, сборка в Premiere. Горизонталь и вертикаль.",
+      "works": [
+        {
+          "slug": "motion-company-ad",
+          "title": "Короткая реклама для компании",
+          "note": "Короткое рекламное видео под ключ: монтаж, авторский motion-дизайн в After Effects, сборка в Premiere Pro. Сделано целиком одним человеком.",
+          "tags": [
+            "motion design",
+            "After Effects",
+            "brand video",
+            "монтаж",
+            "Premiere Pro"
+          ],
+          "orient": "h",
+          "state": "placeholder"
+        },
+        {
+          "slug": "motion-figma-banner",
+          "title": "Баннер по макетам из Figma",
+          "note": "Вертикальный рекламный баннер собран с нуля по дизайн-макетам: анимация объектов, дополнительные элементы и тайминги — вручную в After Effects.",
+          "tags": [
+            "motion design",
+            "After Effects",
+            "анимация объектов",
+            "работа по макетам",
+            "brand"
+          ],
+          "orient": "v",
+          "state": "placeholder"
+        },
+        {
+          "slug": "motion-vertical-ae",
+          "title": "Вертикальная реклама в After Effects",
+          "note": "Короткая вертикаль, собранная целиком в After Effects без сторонних футажей — каждый элемент нарисован и анимирован вручную.",
+          "tags": [
+            "After Effects",
+            "2D-анимация",
+            "motion design",
+            "vertical video",
+            "графика с нуля"
+          ],
+          "orient": "v",
+          "state": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "shorts",
+      "num": "04",
+      "cat": "Vertical",
+      "title": "Shorts / вертикаль",
+      "desc": "Перепаковать длинный материал в 30–60 секунд так, чтобы держал с первой секунды. Субтитры, motion-элементы, ритм речи.",
+      "works": [
+        {
+          "slug": "shorts-fedos-football",
+          "title": "Shorts для канала «Федос» (футбол)",
+          "note": "Вертикальные ролики под спортивный канал: графдизайн и motion-акценты усиливают подачу, нарезка держит темп с первого кадра.",
+          "tags": [
+            "vertical video",
+            "motion graphics",
+            "графдизайн",
+            "ритм",
+            "shorts"
+          ],
+          "orient": "v",
+          "state": "placeholder"
+        },
+        {
+          "slug": "shorts-edu-channel",
+          "title": "Shorts обучающего канала (бизнес/AI)",
+          "note": "Короткие выжимки для канала про бизнес и AI: субтитры, интеграция стоков и нарезка по ритму речи под максимальное удержание.",
+          "tags": [
+            "subtitling",
+            "ритм речи",
+            "stock integration",
+            "retiming",
+            "shorts"
+          ],
+          "orient": "v",
+          "state": "placeholder"
+        },
+        {
+          "slug": "shorts-new-year",
+          "title": "Новогодний шортс",
+          "note": "Короткий вертикальный ролик с лёгким motion-дизайном, субтитрами и плотным саунд-дизайном.",
+          "tags": [
+            "vertical video",
+            "motion graphics",
+            "субтитры",
+            "sound design",
+            "shorts"
+          ],
+          "orient": "v",
+          "state": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "edu",
+      "num": "05",
+      "cat": "Educational",
+      "title": "Обучающий контент",
+      "desc": "Баланс темпа и понятности: motion помогает фокусироваться на смысле. Видеоинструкции с ручной анимацией и ролики с озвучкой.",
+      "works": [
+        {
+          "slug": "edu-product-tutorial",
+          "title": "Видеоинструкция по продукту",
+          "note": "Гайд по работе с сайтом: страницы, переходы и курсор анимированы вручную в After Effects из статичных скринов — живой интерфейс собран с нуля.",
+          "tags": [
+            "UI-анимация",
+            "After Effects",
+            "motion design",
+            "инфографика",
+            "скринкаст"
+          ],
+          "orient": "h",
+          "state": "placeholder"
+        },
+        {
+          "slug": "edu-trading-motion",
+          "title": "Трейдинг-разбор с motion-подсветкой",
+          "note": "Ролик с озвучкой, где лёгкий motion подсвечивает ключевые элементы на экране — зритель не теряет фокус на объяснении.",
+          "tags": [
+            "motion design",
+            "озвучка",
+            "выделение акцентов",
+            "screencast",
+            "pacing"
+          ],
+          "orient": "h",
+          "state": "placeholder"
+        }
+      ]
+    }
+  ]
+}

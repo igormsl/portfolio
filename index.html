@@ -84,35 +84,62 @@
   .sec-desc{color:#CFCBC1;max-width:720px;font-size:16.5px;margin-bottom:40px}
   .sec-cat{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
 
-  /* work grid */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
-  @media(max-width:780px){.grid{grid-template-columns:1fr}}
-  .work{display:flex;flex-direction:column}
-  .work.tall{grid-row:span 1}
-  .frame{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a0a0e;aspect-ratio:16/9}
-  .frame.v{aspect-ratio:9/16;max-width:330px}
-  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:7}
-  /* premium placeholder — Aurora + живой ambient-клип, видно что там видео */
-  .frame .amb{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;opacity:.62;filter:saturate(1.05) contrast(1.02)}
-  .frame .aurora{position:absolute;inset:-45%;z-index:2;filter:saturate(1.35) blur(12px);opacity:.55;mix-blend-mode:soft-light;
-    background:conic-gradient(from 0deg at 50% 50%,#3a2150,#6a3a20,#b8823a,#3a2150,#1e3a52,#3a2150);animation:spin 17s linear infinite}
-  .frame .veil{position:absolute;inset:0;z-index:3;background:radial-gradient(72% 72% at 50% 46%,transparent,rgba(8,8,12,.66))}
+  /* work grid — смешанная ориентация, без дыр */
+  .grid{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+  .work{display:flex;flex-direction:column;min-width:0}
+  .work.h{flex:1 1 440px;max-width:560px}
+  .work.v{flex:0 0 300px;width:300px}
+  @media(max-width:780px){
+    .grid{gap:22px}
+    .work.h{flex:1 1 100%;max-width:none}
+    .work.v{flex:1 1 100%;width:auto;max-width:340px;margin:0 auto}
+  }
+  .frame{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a0a0e;cursor:pointer;
+    transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .4s}
+  .frame.h{aspect-ratio:16/9}
+  .frame.v{aspect-ratio:9/16}
+  .work:hover .frame{transform:translateY(-4px);border-color:rgba(240,190,90,.5);
+    box-shadow:0 18px 60px rgba(0,0,0,.5),0 0 40px rgba(240,190,90,.14)}
+  .frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+  .frame video.full{z-index:8;background:#000;object-fit:contain}
+  .frame .aurora{position:absolute;inset:-45%;z-index:1;filter:saturate(1.3) blur(14px);opacity:.5;mix-blend-mode:soft-light;
+    background:conic-gradient(from 0deg at 50% 50%,#3a2150,#6a3a20,#b8823a,#3a2150,#1e3a52,#3a2150);animation:spin 18s linear infinite}
+  .frame .veil{position:absolute;inset:0;z-index:3;background:radial-gradient(72% 72% at 50% 46%,transparent,rgba(8,8,12,.62))}
   .frame .grain{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:.06;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   .frame .pnum{position:absolute;top:12px;left:15px;z-index:5;font-family:var(--disp);font-size:26px;color:rgba(255,255,255,.6);text-shadow:0 2px 12px rgba(0,0,0,.55)}
-  .frame .badge{position:absolute;top:14px;right:14px;z-index:5;display:flex;gap:6px}
+  .frame .badge{position:absolute;top:14px;right:14px;z-index:6;display:flex;gap:6px}
   .frame .badge span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#eee;background:rgba(0,0,0,.42);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);padding:4px 8px;border-radius:4px}
   .frame .badge .q{color:var(--gold);border-color:rgba(240,190,90,.42)}
-  .frame .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5}
+  .frame .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:6;transition:opacity .3s}
   .frame .play .ring{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
     background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.46);box-shadow:0 10px 40px rgba(0,0,0,.4);transition:.4s}
   .frame .play .tri{color:#fff;font-size:19px;margin-left:4px}
   .work:hover .frame .play .ring{transform:scale(1.08);box-shadow:0 12px 52px rgba(240,190,90,.38);border-color:rgba(240,190,90,.72)}
+  .frame .expand{position:absolute;bottom:12px;right:12px;z-index:7;width:38px;height:38px;border-radius:9px;display:grid;place-items:center;
+    background:rgba(0,0,0,.5);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:15px;cursor:pointer;opacity:0;transition:.25s}
+  .work:hover .frame .expand,.frame.playing .expand{opacity:1}
+  .frame.playing .play,.frame.playing .aurora,.frame.playing .veil,.frame.playing .pnum,.frame.playing .badge{opacity:0;pointer-events:none;transition:opacity .3s}
+  .frame.placeholder{cursor:default}
+  .frame.placeholder .play .ring{opacity:.55}
   @keyframes spin{to{transform:rotate(1turn)}}
+
   .w-title{font-family:var(--disp);font-weight:600;font-size:20px;margin-top:18px;line-height:1.25}
   .w-note{color:#BDB9AF;font-size:15px;margin-top:8px}
   .w-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
   .w-tags span{font-size:11px;color:var(--gold);background:rgba(240,190,90,.07);border:1px solid rgba(240,190,90,.18);padding:3px 9px;border-radius:3px}
+
+  /* lightbox / театр */
+  .lb{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:5vh 5vw;
+    background:rgba(6,6,9,.88);backdrop-filter:blur(10px);opacity:0;transition:opacity .3s}
+  .lb.open{display:flex;opacity:1}
+  .lb .box{position:relative;transform:scale(.95);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+  .lb.open .box{transform:scale(1)}
+  .lb video{display:block;max-height:90vh;max-width:90vw;border-radius:12px;box-shadow:0 40px 120px rgba(0,0,0,.65);background:#000}
+  .lb.v video{max-width:min(480px,92vw)}
+  .lb .x{position:absolute;top:-46px;right:0;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:20px;cursor:pointer}
+  body.lb-open{overflow:hidden}
 
   /* contact */
   .contact{padding:100px 0 60px;border-top:1px solid var(--line);text-align:center}
@@ -195,101 +222,143 @@
   </footer>
 </div>
 
-<script>
-/* ============================================================
-   КАК ПОДСТАВИТЬ СВОИ ВИДЕО:
-   У каждой работы есть поле  vk: ''
-   Возьми ссылку VK-клипа vkvideo.ru/clip-202210095_XXXX — нужны последние ЦИФРЫ XXXX
-   (пример: clip-202210095_456239027 → 456239027)
-   и впиши их в кавычки:  vk: '456239027'
-   Пустое поле = красивая заглушка с кнопкой ▶.
-   ============================================================ */
-const CLIPS = ['clips/1.mp4']; // добавить остальные: 'clips/2.mp4','clips/3.mp4'... когда файлы будут на VPS
-const rndClip = () => CLIPS[Math.floor(Math.random()*CLIPS.length)];
-const VK_OID = '-202210095'; // владелец VK-клипов (группа CMSL)
-const SECTIONS = [
-  { id:'ai', num:'01', cat:'Generative AI', title:'AI-контент с нуля',
-    desc:'AI как полноценная производственная среда: промпты, контроль персонажей и локаций, монтаж и сборка в Premiere — лично. Начинал на ранних, ещё нестабильных, инструментах.',
-    works:[
-      {num:'01', title:'AI-аватар: цифровой персонаж под ключ', note:'Собрал виртуального героя целиком — внешность, характерная мимика, собственная локация и короткие сцены с движением. Консистентность персонажа от кадра к кадру держал вручную.', fmt:'16:9', vk:'456239027', tags:['prompt engineering','character design','консистентность','2D-анимация','compositing']},
-      {num:'02', title:'AI-мультсериал: анимированный нарратив', note:'Короткий сериал с авторским AI-персонажем, который ведёт историю по эпизодам. Генерация, отбор дублей и сборка драматургии в Premiere Pro.', fmt:'16:9', vk:'456239031', tags:['storytelling','AI-анимация','промптинг','монтаж нарратива','sound design']},
-      {num:'03', title:'Headliners — AI-интро для тизера', note:'Клиент пришёл за экспертизой в AI: завлекающее интро для тизера. Концепция, генеративная графика и motion-сборка — от идеи до мастера.', fmt:'16:9', vk:'456239034', tags:['motion design','generative graphics','title design','концепция','брендинг']},
-    ]},
-  { id:'event', num:'02', cat:'Event Films', title:'Международные конференции',
-    desc:'Большие массивы съёмочного материала: отбор сильных кадров, ритм, музыка, атмосфера события за минуту-полторы.',
-    works:[
-      {num:'01', title:'BlockChain 2024, Дубай — recap', note:'Из часов съёмки с конференции — динамичный recap на минуту. Отбор сильных кадров, ритм под музыку, ощущение масштаба события. Клиент — Headliners.', fmt:'16:9', vk:'456239019', tags:['event recap','отбор кадров','ритм монтажа','color grading','sound design']},
-    ]},
-  { id:'motion', num:'03', cat:'Motion Design', title:'Motion-дизайн и реклама',
-    desc:'Реклама, где motion — основа повествования. Анимация, движение объектов и графика лично в After Effects, сборка в Premiere. Горизонталь и вертикаль.',
-    works:[
-      {num:'01', title:'Реклама для англоязычного канала', note:'Рекламный ролик полного цикла: динамичный монтаж, авторский motion и плотный саунд-дизайн. В дело пошли собственные тревел-кадры. От концепта до мастера — один.', fmt:'16:9', vk:'456239032', tags:['motion design','sound design','brand video','монтаж','собственные стоки']},
-      {num:'02', title:'Баннер по макетам из Figma', note:'Вертикальный рекламный баннер собран с нуля по дизайн-макетам: анимация объектов, дополнительные элементы и тайминги — вручную в After Effects.', fmt:'9:16', vk:'456239026', tags:['motion design','After Effects','анимация объектов','работа по макетам','brand']},
-      {num:'03', title:'Вертикальная реклама в After Effects', note:'Короткая вертикаль, собранная целиком в After Effects без сторонних футажей — каждый элемент нарисован и анимирован вручную.', fmt:'9:16', vk:'456239024', tags:['After Effects','2D-анимация','motion design','vertical video','графика с нуля']},
-    ]},
-  { id:'shorts', num:'04', cat:'Vertical', title:'Shorts / вертикаль',
-    desc:'Перепаковать длинный материал в 30–60 секунд так, чтобы держал с первой секунды. Субтитры, motion-элементы, ритм речи.',
-    works:[
-      {num:'01', title:'Shorts для канала «Федос» (футбол)', note:'Вертикальные ролики под спортивный канал: графдизайн и motion-акценты усиливают подачу, нарезка держит темп с первого кадра.', fmt:'9:16', vk:'456239037', tags:['vertical video','motion graphics','графдизайн','ритм','shorts']},
-      {num:'02', title:'Shorts обучающего канала (бизнес/AI)', note:'Короткие выжимки для канала про бизнес и AI: субтитры, интеграция стоков и нарезка по ритму речи под максимальное удержание.', fmt:'9:16', vk:'456239025', tags:['subtitling','ритм речи','stock integration','retiming','shorts']},
-    ]},
-  { id:'edu', num:'05', cat:'Educational', title:'Обучающий контент',
-    desc:'Баланс темпа и понятности: motion помогает фокусироваться на смысле. Видеоинструкции с ручной анимацией и ролики с озвучкой.',
-    works:[
-      {num:'01', title:'Видеоинструкция по продукту', note:'Гайд по работе с сайтом: страницы, переходы и курсор анимированы вручную в After Effects из статичных скринов — живой интерфейс собран с нуля.', fmt:'16:9', vk:'456239036', tags:['UI-анимация','After Effects','motion design','инфографика','скринкаст']},
-      {num:'02', title:'Трейдинг-разбор с motion-подсветкой', note:'Ролик с озвучкой, где лёгкий motion подсвечивает ключевые элементы на экране — зритель не теряет фокус на объяснении.', fmt:'16:9', vk:'456239018', tags:['motion design','озвучка','выделение акцентов','screencast','pacing']},
-    ]},
-];
+<div class="lb" id="lb"><div class="box"><button class="x" aria-label="Закрыть">✕</button></div></div>
 
-function media(w){
-  const v = (w.fmt==='9:16') ? ' v' : '';
-  if(w.vimeo){
-    return `<div class="frame${v}"><iframe src="https://player.vimeo.com/video/${w.vimeo}?title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
+<script>
+const VID = 'videos/';
+const fmtLabel = o => o === 'v' ? '9:16' : '16:9';
+
+function cardHtml(w, i){
+  const num = String(i + 1).padStart(2, '0');
+  const oc = w.orient === 'v' ? 'v' : 'h';
+  const tags = w.tags.map(t => `<span>${t}</span>`).join('');
+  const meta = `<h3 class="w-title">${w.title}</h3><p class="w-note">${w.note}</p><div class="w-tags">${tags}</div>`;
+  if(w.state !== 'ready'){
+    return `<article class="work ${oc} rv"><div class="frame ${oc} placeholder">
+      <div class="aurora"></div><div class="veil"></div><div class="grain"></div>
+      <span class="pnum">${num}</span>
+      <div class="badge"><span>${fmtLabel(w.orient)}</span><span class="q">скоро</span></div>
+      <div class="play"><div class="ring"><span class="tri">▶</span></div></div>
+    </div>${meta}</article>`;
   }
-  return `<div class="frame ph${v}" data-vk="${w.vk||''}">
-    <video class="amb" src="${rndClip()}" autoplay muted loop playsinline preload="metadata"></video>
-    <div class="aurora"></div><div class="veil"></div><div class="grain"></div>
-    <span class="pnum">${w.num}</span>
-    <div class="badge"><span>${w.fmt}</span></div>
+  return `<article class="work ${oc} rv"><div class="frame ${oc}" data-slug="${w.slug}">
+    <video class="preview" src="${VID}${w.slug}.preview.mp4" poster="${VID}${w.slug}.jpg" muted loop playsinline preload="none"></video>
+    <div class="aurora"></div><div class="grain"></div>
+    <span class="pnum">${num}</span>
+    <div class="badge"><span>${fmtLabel(w.orient)}</span></div>
     <div class="play"><div class="ring"><span class="tri">▶</span></div></div>
-  </div>`;
+    <button class="expand" title="На весь экран" aria-label="На весь экран">⤢</button>
+  </div>${meta}</article>`;
 }
-function workCard(w){
-  return `<article class="work rv">${media(w)}<h3 class="w-title">${w.title}</h3><p class="w-note">${w.note}</p><div class="w-tags">${w.tags.map(t=>`<span>${t}</span>`).join('')}</div></article>`;
-}
+function sortWorks(works){ return [...works].sort((a,b)=>(a.orient==='v')-(b.orient==='v')); } // h раньше v
 function sectionHtml(s){
+  const works = sortWorks(s.works).map(cardHtml).join('');
   return `<section class="section" id="${s.id}">
     <div class="sec-cat rv">${s.cat}</div>
     <div class="sec-head rv"><span class="sec-num">${s.num}</span><h2 class="sec-title">${s.title}</h2></div>
     <p class="sec-desc rv">${s.desc}</p>
-    <div class="grid">${s.works.map(workCard).join('')}</div>
+    <div class="grid">${works}</div>
   </section>`;
 }
-document.getElementById('work-root').innerHTML = SECTIONS.map(sectionHtml).join('');
 
-/* ambient clips — крутятся как муteд-гифки; вне зоны видимости пауза (производительность) */
-const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:0,rootMargin:'400px 0px'});
-document.querySelectorAll('video.amb').forEach(v=>vio.observe(v));
-
-/* клик по карточке — в этой же рамке открывается VK-ролик (автоплей, со звуком) */
-document.querySelectorAll('.frame.ph[data-vk]').forEach(f=>{
-  const id=f.getAttribute('data-vk'); if(!id){return;}
-  f.style.cursor='pointer';
-  f.addEventListener('click',()=>{
-    const a=f.querySelector('video.amb'); if(a){a.pause();}
-    f.innerHTML='<iframe src="https://vk.com/video_ext.php?oid='+VK_OID+'&id='+id+'&hd=2&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen frameborder="0" style="position:absolute;inset:0;width:100%;height:100%;border:0;z-index:9"></iframe>';
-  },{once:true});
+fetch(VID + 'manifest.json').then(r => r.json()).then(data => {
+  document.getElementById('work-root').innerHTML = data.sections.map(sectionHtml).join('');
+  initMedia();
+  initReveal();
+}).catch(err => {
+  console.error(err);
+  document.getElementById('work-root').innerHTML =
+    '<p style="color:var(--muted);padding:60px 0;text-align:center">Не удалось загрузить список работ.</p>';
 });
 
-/* nav scroll state */
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40)});
+/* ---- плеер ---- */
+const lb = document.getElementById('lb');
+const lbBox = lb.querySelector('.box');
+let lbVideo = null, lbReturn = null;
 
-/* reveal on scroll */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach((el,i)=>{io.observe(el)});
-/* stagger hero */
-document.querySelectorAll('.hero .rv').forEach((el,i)=>{el.style.transitionDelay=(i*0.08)+'s'});
+function initMedia(){
+  const pio = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if(e.isIntersecting) v.play().catch(()=>{}); else v.pause();
+  }), {threshold:0, rootMargin:'300px 0px'});
+  document.querySelectorAll('video.preview').forEach(v => pio.observe(v));
+
+  document.querySelectorAll('.frame[data-slug]').forEach(f => {
+    const slug = f.getAttribute('data-slug');
+    const orient = f.classList.contains('v') ? 'v' : 'h';
+    f.addEventListener('click', ev => {
+      if(ev.target.closest('.expand')) return;
+      playInline(f, slug);
+    });
+    f.querySelector('.expand').addEventListener('click', ev => {
+      ev.stopPropagation();
+      openLightbox(f, slug, orient);
+    });
+  });
+}
+
+function playInline(f, slug){
+  let full = f.querySelector('video.full');
+  if(!full){
+    const prev = f.querySelector('video.preview');
+    if(prev) prev.pause();
+    full = document.createElement('video');
+    full.className = 'full';
+    full.src = VID + slug + '.mp4';
+    full.controls = true; full.autoplay = true; full.playsInline = true;
+    f.appendChild(full);
+    f.classList.add('playing');
+  } else {
+    full.play().catch(()=>{});
+  }
+}
+
+function openLightbox(f, slug, orient){
+  const inlineFull = f.querySelector('video.full');
+  const t = inlineFull ? inlineFull.currentTime : 0;
+  if(inlineFull) inlineFull.pause();
+  lbReturn = inlineFull || null;
+  lb.className = 'lb open ' + orient;
+  lbVideo = document.createElement('video');
+  lbVideo.src = VID + slug + '.mp4';
+  lbVideo.controls = true; lbVideo.playsInline = true; lbVideo.autoplay = true;
+  lbVideo.addEventListener('loadedmetadata', () => {
+    if(t > 0 && t < lbVideo.duration) lbVideo.currentTime = t;
+  }, {once:true});
+  lbBox.insertBefore(lbVideo, lbBox.querySelector('.x'));
+  lbVideo.play().catch(()=>{});
+  document.body.classList.add('lb-open');
+}
+
+function closeLightbox(){
+  if(!lbVideo) return;
+  const t = lbVideo.currentTime;
+  if(lbReturn){
+    const ret = lbReturn;
+    ret.addEventListener('loadedmetadata', () => { if(t < ret.duration) ret.currentTime = t; }, {once:true});
+    if(ret.readyState >= 1 && t < ret.duration) ret.currentTime = t;
+  }
+  lbVideo.pause(); lbVideo.remove(); lbVideo = null; lbReturn = null;
+  lb.classList.remove('open');
+  document.body.classList.remove('lb-open');
+  setTimeout(() => { lb.className = 'lb'; }, 320);
+}
+lb.addEventListener('click', e => { if(e.target === lb || e.target.closest('.x')) closeLightbox(); });
+addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+
+/* ---- nav + reveal ---- */
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => { nav.classList.toggle('scrolled', scrollY > 40); });
+
+function initReveal(){
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.12});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+}
+/* hero виден сразу (его .rv вне work-root) */
+document.querySelectorAll('.hero .rv').forEach((el, i) => { el.style.transitionDelay = (i * 0.06) + 's'; });
+requestAnimationFrame(() => document.querySelectorAll('.hero .rv').forEach(el => el.classList.add('in')));
 </script>
 </body>
 </html>
