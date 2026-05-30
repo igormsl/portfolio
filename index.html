@@ -243,7 +243,7 @@ function cardHtml(w, i){
     </div>${meta}</article>`;
   }
   return `<article class="work ${oc} rv"><div class="frame ${oc}" data-slug="${w.slug}">
-    <video class="preview" src="${VID}${w.slug}.preview.mp4" poster="${VID}${w.slug}.jpg" muted loop playsinline preload="none"></video>
+    <video class="preview" src="${VID}${w.slug}.preview.mp4" poster="${VID}${w.slug}.jpg" muted loop playsinline preload="none" controlslist="nodownload" disablepictureinpicture oncontextmenu="return false"></video>
     <div class="aurora"></div><div class="grain"></div>
     <span class="pnum">${num}</span>
     <div class="badge"><span>${fmtLabel(w.orient)}</span></div>
@@ -307,6 +307,8 @@ function playInline(f, slug){
     full.className = 'full';
     full.src = VID + slug + '.mp4';
     full.controls = true; full.autoplay = true; full.playsInline = true;
+    full.controlsList = 'nodownload'; full.disablePictureInPicture = true;
+    full.oncontextmenu = () => false;
     f.appendChild(full);
     f.classList.add('playing');
   } else {
@@ -323,6 +325,8 @@ function openLightbox(f, slug, orient){
   lbVideo = document.createElement('video');
   lbVideo.src = VID + slug + '.mp4';
   lbVideo.controls = true; lbVideo.playsInline = true; lbVideo.autoplay = true;
+  lbVideo.controlsList = 'nodownload'; lbVideo.disablePictureInPicture = true;
+  lbVideo.oncontextmenu = () => false;
   lbVideo.addEventListener('loadedmetadata', () => {
     if(t > 0 && t < lbVideo.duration) lbVideo.currentTime = t;
   }, {once:true});
