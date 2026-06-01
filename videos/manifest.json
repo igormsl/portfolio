@@ -6,6 +6,7 @@
       "cat": "Generative AI",
       "title": "AI-контент с нуля",
       "desc": "AI как полноценная производственная среда: пишу промпты, генерирую фото и видео, собираю всё в Premiere Pro.",
+      "layout": "split",
       "works": [
         {
           "slug": "ai-intro-headliners",
@@ -227,7 +228,7 @@
             "English"
           ],
           "orient": "h",
-          "state": "placeholder"
+          "state": "ready"
         },
         {
           "slug": "head-en-2",
@@ -241,7 +242,7 @@
             "English"
           ],
           "orient": "h",
-          "state": "placeholder"
+          "state": "ready"
         }
       ]
     },
@@ -278,7 +279,7 @@
             "pacing"
           ],
           "orient": "h",
-          "state": "placeholder"
+          "state": "ready"
         }
       ]
     }
