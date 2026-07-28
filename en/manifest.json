@@ -1,0 +1,248 @@
+{
+  "sections": [
+    {
+      "id": "ai",
+      "num": "01",
+      "cat": "Generative AI",
+      "title": "AI content from scratch",
+      "desc": "AI as a real production environment, not a gimmick: we write the prompts, generate the stills and the footage, then cut it all in Premiere Pro.",
+      "works": [
+        {
+          "slug": "ai-intro-headliners",
+          "title": "AI teaser intro for an event brand",
+          "note": "The client came to us for AI expertise: a hook intro for a teaser. Concept, generative visuals and motion assembly — from the first idea to the delivered master.",
+          "tags": [
+            "Higgsfield",
+            "Nano Banana Pro",
+            "Kling 3.0",
+            "After Effects",
+            "concept"
+          ],
+          "orient": "h",
+          "state": "ready"
+        },
+        {
+          "slug": "ai-cartoon-2",
+          "title": "AI short film — new episode",
+          "note": "An original AI-animated short: concept, frame generation, take selection and assembly in Premiere Pro. Built end to end with neural nets on our own prompts.",
+          "tags": [
+            "animated series",
+            "animation",
+            "Higgsfield",
+            "Nano Banana Pro",
+            "Kling 3.0",
+            "prompting"
+          ],
+          "orient": "h",
+          "state": "ready"
+        },
+        {
+          "slug": "ai-generation",
+          "title": "AI host — a video generated from zero",
+          "note": "An English-language vertical where the host is fully AI-generated: the look and the delivery both come from our prompts. Lip-sync, infographics, subtitles and final cut — no human ever stepped in front of a camera.",
+          "tags": [
+            "prompt engineering",
+            "AI avatar",
+            "lip-sync",
+            "infographics",
+            "subtitles"
+          ],
+          "orient": "v",
+          "state": "ready"
+        },
+        {
+          "slug": "ai-mom-azu",
+          "title": "Azu — animated series for moms",
+          "note": "An episode of our own vertical animated series: one consistent AI character, prompt-generated scenes, voice-over and a shorts-format cut.",
+          "tags": [
+            "AI animation",
+            "character design",
+            "voice-over",
+            "storytelling",
+            "vertical"
+          ],
+          "orient": "v",
+          "state": "ready"
+        },
+        {
+          "slug": "ai-fruit-drama",
+          "title": "Fruit drama — viral AI sketch",
+          "note": "A small Pixar-flavoured story with fruit characters: script, frame generation, voice-over and edit — built for viral vertical feeds.",
+          "tags": [
+            "AI animation",
+            "comedy",
+            "prompting",
+            "sound design",
+            "vertical"
+          ],
+          "orient": "v",
+          "state": "ready"
+        },
+        {
+          "slug": "ai-cartoon",
+          "title": "AI cartoon series: animated narrative",
+          "note": "A short series with an original AI character carrying the story across episodes. Generation, take selection and story assembly in Premiere Pro.",
+          "tags": [
+            "storytelling",
+            "AI animation",
+            "prompting",
+            "narrative editing",
+            "sound design"
+          ],
+          "orient": "v",
+          "state": "ready"
+        }
+      ]
+    },
+    {
+      "id": "event",
+      "num": "02",
+      "cat": "Event Films",
+      "title": "International conferences",
+      "desc": "Hours of raw footage turned into a minute: the strongest shots, the rhythm, the music, the feeling of being in the room.",
+      "works": [
+        {
+          "slug": "event-blockchain-dubai",
+          "title": "Blockchain conference 2024, Dubai — recap",
+          "note": "Hours of footage from a blockchain summit cut down to a one-minute recap. Music-driven pacing, the scale of the event readable in seconds. Client — an international blockchain event organizer.",
+          "tags": [
+            "event recap",
+            "shot selection",
+            "pacing",
+            "color grading",
+            "sound design"
+          ],
+          "orient": "h",
+          "state": "ready"
+        },
+        {
+          "slug": "event-brazil-recap",
+          "title": "Brazil 2025 — conference recap",
+          "note": "Hours of footage from a conference in Brazil: the strongest shots, music and clean transitions with stock inserts — a wrap-up film delivered to the client.",
+          "tags": [
+            "event recap",
+            "shot selection",
+            "pacing",
+            "color grading",
+            "sound design"
+          ],
+          "orient": "h",
+          "state": "ready"
+        }
+      ]
+    },
+    {
+      "id": "motion",
+      "num": "03",
+      "cat": "Motion Design",
+      "title": "Motion design",
+      "desc": "Animation and graphics in After Effects: movement carries the message, not just decorates it.",
+      "works": [
+        {
+          "slug": "motion-match-tv",
+          "title": "Sports broadcaster — motion package (test assignment)",
+          "note": "A test assignment for a national sports TV network: prove editing and motion skills in a few seconds. The style is deliberately dense — the brief was to pack in as many techniques as possible: graphics, logo animation, tempo work.",
+          "tags": [
+            "motion design",
+            "After Effects",
+            "sports",
+            "broadcast graphics",
+            "4K"
+          ],
+          "orient": "h",
+          "state": "ready"
+        }
+      ]
+    },
+    {
+      "id": "shorts",
+      "num": "04",
+      "cat": "Vertical",
+      "title": "Shorts / vertical",
+      "desc": "Vertical short-form under 60 seconds: the pace is set in the first second and holds to the end. Subtitles, light motion design, sound accents, cuts on the rhythm of speech.",
+      "works": [
+        {
+          "slug": "shorts-fedos-football",
+          "title": "Shorts for a football media channel",
+          "note": "Vertical videos for a sports channel: graphic design and motion accents push the delivery, the cut holds tempo from the first frame.",
+          "tags": [
+            "subtitles",
+            "vertical video",
+            "motion design",
+            "sound design",
+            "high-energy",
+            "graphic design"
+          ],
+          "orient": "v",
+          "state": "ready"
+        },
+        {
+          "slug": "shorts-edu-channel",
+          "title": "Shorts for a business & AI channel",
+          "note": "A short takeaway from a business channel: edit, subtitles, stock inserts, cuts on the rhythm of speech — built for retention.",
+          "tags": [
+            "subtitles",
+            "vertical video",
+            "motion design",
+            "sound design",
+            "high-energy",
+            "stock integration"
+          ],
+          "orient": "v",
+          "state": "ready"
+        },
+        {
+          "slug": "shorts-levis",
+          "title": "Shorts «Levis» — sport meets brands",
+          "note": "A vertical breakdown of how brands cash in on sports news: host on camera, editorial cards, dense subtitles and tempo from second one.",
+          "tags": [
+            "subtitles",
+            "vertical video",
+            "editorial graphics",
+            "sound design",
+            "high-energy"
+          ],
+          "orient": "v",
+          "state": "ready"
+        },
+        {
+          "slug": "shorts-nike-mind",
+          "title": "Shorts «Nike Mind» — unboxing",
+          "note": "Unboxing the Nike Mind sneakers: studio shoot, close-ups, subtitles and a rhythmic cut — a review that holds attention to the last second.",
+          "tags": [
+            "subtitles",
+            "vertical video",
+            "unboxing",
+            "pacing",
+            "sound design"
+          ],
+          "orient": "v",
+          "state": "ready"
+        }
+      ]
+    },
+    {
+      "id": "stock",
+      "num": "05",
+      "cat": "Stock Compilation",
+      "title": "Stock-built videos",
+      "desc": "Footage assembled entirely from stock: shots matched to the voice-over, paced by meaning rather than by beat.",
+      "works": [
+        {
+          "slug": "stock-voiceover",
+          "title": "Stock cut for a voice-over",
+          "note": "A finance video built entirely from stock footage under a voice-over: material selection, pacing driven by the narration, infographics and careful grading.",
+          "tags": [
+            "stock integration",
+            "voice-over",
+            "pacing",
+            "color grading",
+            "sound design"
+          ],
+          "orient": "h",
+          "state": "ready"
+        }
+      ]
+    }
+  ]
+}
