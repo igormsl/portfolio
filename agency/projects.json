@@ -1,0 +1,199 @@
+{
+  "projects": [
+    {
+      "id": "headliners",
+      "client": "Хедлайнер",
+      "title": "Хедлайнер",
+      "kind": "client",
+      "theses": ["AI-интро для тизера: концепция, генерация и motion-дизайн.", "Монтаж отчётного ролика с BlockChain 2024 в Дубае."],
+      "description": "",
+      "works": [
+        {"slug": "ai-intro-headliners", "title": "AI-интро", "orient": "h"},
+        {"slug": "event-blockchain-dubai", "title": "BlockChain 2024 · Дубай", "orient": "h"}
+      ]
+    },
+    {
+      "id": "fedos",
+      "client": "Федос",
+      "title": "Федос",
+      "kind": "client",
+      "theses": ["Вертикальные ролики для футбольного YouTube-канала.", "Монтаж, графический дизайн и motion-акценты."],
+      "description": "",
+      "works": [{"slug": "shorts-fedos-football", "title": "Футбольный Shorts", "orient": "v"}]
+    },
+    {
+      "id": "business-ai-channel",
+      "client": "YouTube-канал о бизнесе и AI",
+      "title": "YouTube-канал о бизнесе и AI",
+      "kind": "client",
+      "theses": ["Короткие выжимки для обучающего канала.", "Монтаж по ритму речи, субтитры и стоковые вставки."],
+      "description": "",
+      "works": [{"slug": "shorts-edu-channel", "title": "Shorts о бизнесе", "orient": "v"}]
+    },
+    {
+      "id": "brazil-conference",
+      "client": "",
+      "title": "Конференция в Бразилии",
+      "kind": "project",
+      "theses": ["Отбор кадров из съёмочного материала заказчика.", "Монтаж отчётного ролика, музыка и переходы со стоковым видео."],
+      "description": "",
+      "works": [{"slug": "event-brazil-recap", "title": "Бразилия · 2025", "orient": "h"}]
+    },
+    {
+      "id": "ai-host",
+      "client": "",
+      "title": "AI-ведущий",
+      "kind": "project",
+      "theses": ["Создание внешности и подачи виртуального ведущего.", "Липсинк, инфографика, субтитры и монтаж."],
+      "description": "",
+      "works": [{"slug": "ai-generation", "title": "Ролик с AI-ведущим", "orient": "v"}]
+    },
+    {
+      "id": "alexey-gasilin",
+      "client": "Алексей Гасилин",
+      "title": "Алексей Гасилин",
+      "kind": "client",
+      "theses": ["Вертикальные ролики для блога: разбор о Levi’s и распаковка Nike Mind.", "Монтаж, editorial-графика и субтитры."],
+      "description": "",
+      "works": [
+        {"slug": "shorts-levis", "title": "Разбор о Levi’s", "orient": "v"},
+        {"slug": "shorts-nike-mind", "title": "Распаковка Nike Mind", "orient": "v"}
+      ]
+    },
+    {
+      "id": "finance-video",
+      "client": "",
+      "title": "Видео о финансах",
+      "kind": "project",
+      "theses": ["Подбор стоковых кадров под закадровый текст.", "Монтаж, инфографика и цветокоррекция."],
+      "description": "",
+      "works": [{"slug": "stock-voiceover", "title": "Ролик под озвучку", "orient": "h"}]
+    },
+    {
+      "id": "azu",
+      "client": "",
+      "title": "Азу",
+      "kind": "original",
+      "theses": ["Анимационная серия для мам с постоянным AI-персонажем.", "Генерация сцен, озвучка и монтаж."],
+      "description": "",
+      "works": [{"slug": "ai-mom-azu", "title": "Эпизод серии", "orient": "v"}]
+    },
+    {
+      "id": "animated-short",
+      "client": "",
+      "title": "Анимационная короткометражка",
+      "kind": "original",
+      "theses": ["Концепция и генерация кадров по авторским промптам.", "Отбор дублей и финальная сборка."],
+      "description": "",
+      "works": [{"slug": "ai-cartoon-2", "title": "Короткометражка", "orient": "h"}]
+    },
+    {
+      "id": "animated-series",
+      "client": "",
+      "title": "Анимационный мини-сериал",
+      "kind": "project",
+      "theses": ["История в нескольких эпизодах с AI-персонажем.", "Генерация, отбор дублей и монтаж повествования."],
+      "description": "",
+      "works": [{"slug": "ai-cartoon", "title": "Эпизод мини-сериала", "orient": "v"}]
+    },
+    {
+      "id": "fruit-drama",
+      "client": "",
+      "title": "Фруктовая драма",
+      "kind": "project",
+      "theses": ["Короткая история с фруктовыми персонажами.", "Сценарий, генерация кадров, озвучка и монтаж."],
+      "description": "",
+      "works": [{"slug": "ai-fruit-drama", "title": "Анимационный скетч", "orient": "v"}]
+    },
+    {
+      "id": "digital-character",
+      "client": "",
+      "title": "Цифровой персонаж",
+      "kind": "project",
+      "theses": ["Разработка внешности, характера и мимики AI-аватара.", "Создание локации и анимационных видео."],
+      "description": "",
+      "works": [{"slug": "ai-avatar", "title": "AI-аватар", "orient": "v"}]
+    },
+    {
+      "id": "company-promo",
+      "client": "",
+      "title": "Рекламный ролик компании",
+      "kind": "project",
+      "theses": ["Авторский motion-дизайн в After Effects.", "Монтаж, саунд-дизайн и финальная сборка."],
+      "description": "",
+      "works": [{"slug": "motion-company-ad", "title": "Рекламный ролик", "orient": "h"}]
+    },
+    {
+      "id": "website-banner",
+      "client": "",
+      "title": "Баннер для сайта",
+      "kind": "project",
+      "theses": ["Анимация по готовым дизайн-макетам.", "Движение объектов и дополнительные элементы в After Effects."],
+      "description": "",
+      "works": [{"slug": "motion-figma-banner", "title": "Анимированный баннер", "orient": "v"}]
+    },
+    {
+      "id": "vertical-campaign",
+      "client": "",
+      "title": "Вертикальная реклама",
+      "kind": "project",
+      "theses": ["Ручная анимация и motion-дизайн в After Effects.", "Монтаж и саунд-дизайн."],
+      "description": "",
+      "works": [{"slug": "motion-vertical-ae", "title": "Вертикальный рекламный ролик", "orient": "v"}]
+    },
+    {
+      "id": "new-year-video",
+      "client": "",
+      "title": "Новогодний ролик",
+      "kind": "project",
+      "theses": ["Короткое видео для англоязычного канала.", "Монтаж, субтитры, motion-акценты и саунд-дизайн."],
+      "description": "",
+      "works": [{"slug": "shorts-new-year", "title": "Новогодний Shorts", "orient": "v"}]
+    },
+    {
+      "id": "english-project-one",
+      "client": "",
+      "title": "Англоязычный проект 01",
+      "kind": "project",
+      "theses": ["Монтаж разговорного видео с motion-графикой.", "Саунд-дизайн и подбор стоковых кадров."],
+      "description": "",
+      "works": [{"slug": "head-en-1", "title": "Ролик с motion-графикой", "orient": "h"}]
+    },
+    {
+      "id": "english-project-two",
+      "client": "",
+      "title": "Англоязычный проект 02",
+      "kind": "project",
+      "theses": ["Монтаж разговорного видео на английском.", "Motion-дизайн и работа со звуком."],
+      "description": "",
+      "works": [{"slug": "head-en-2", "title": "Разговорный ролик", "orient": "h"}]
+    },
+    {
+      "id": "product-guide",
+      "client": "",
+      "title": "Видеоинструкция по продукту",
+      "kind": "project",
+      "theses": ["Сборка пользовательского пути из статичных скриншотов.", "Ручная анимация страниц, переходов и курсора."],
+      "description": "",
+      "works": [{"slug": "edu-product-tutorial", "title": "Гайд по работе с сайтом", "orient": "h"}]
+    },
+    {
+      "id": "trading-explainer",
+      "client": "",
+      "title": "Обучающий проект о трейдинге",
+      "kind": "project",
+      "theses": ["Сборка обучающего видео под озвучку.", "Motion-подсветка ключевых элементов на экране."],
+      "description": "",
+      "works": [{"slug": "edu-trading-motion", "title": "Трейдинг-разбор", "orient": "h"}]
+    },
+    {
+      "id": "match-tv",
+      "client": "",
+      "title": "Матч ТВ",
+      "kind": "test",
+      "theses": ["Тестовое задание на монтаж и motion-дизайн.", "Графика, анимация логотипов и работа с темпом."],
+      "description": "",
+      "works": [{"slug": "motion-match-tv", "title": "Motion-пакет · тестовое задание", "orient": "h"}]
+    }
+  ]
+}

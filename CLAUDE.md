@@ -13,6 +13,7 @@ This directory is the independent public repository published with GitHub Pages.
 - `index.html` + `videos/manifest.json` — main portfolio.
 - `v2/index.html` + `v2/manifest.json` — reduced safe/NDA-conscious selection.
 - `en/index.html` + `en/manifest.json` — English LetMeSolveThis surface; its selection is synchronized manually with v2.
+- `agency/index.html` + `agency/projects.json` — agency case-based surface. Includes the union of the main and v2 selections by owner request; it does not inherit v2's reduced-selection designation. Client grouping and project-level theses are manual; unknown clients remain blank. Keep test assignments labelled as tests. Individual videos have no descriptions.
 - `videos/` — shared full, preview and poster assets used by manifests.
 
 The parent private repo owns the generation scripts. Do not hand-edit generated main-manifest fields without checking that workflow. The English manifest is intentionally manual, so a v2 selection change requires an explicit en review rather than blind copying.
@@ -21,7 +22,7 @@ The parent private repo owns the generation scripts. Do not hand-edit generated 
 
 Treat a manifest reference as a publication dependency. Before removing or replacing media:
 
-1. search all three manifests and HTML files;
+1. search all three manifests, `agency/projects.json` and all four HTML routes;
 2. confirm the canonical file and whether a delivery URL already depends on it;
 3. keep each referenced full video, preview and poster together;
 4. respect GitHub's per-file limits and verify the live Pages result after deployment.
@@ -32,10 +33,10 @@ Large or duplicate files are not automatically disposable. Moving future heavy d
 
 Before commit:
 
-- parse all JSON manifests;
+- parse all JSON manifests and `agency/projects.json`;
 - verify every local file referenced by a manifest exists;
 - inspect `git diff --check` and `git status -sb`;
-- serve locally and check desktop/mobile layouts, playback, posters, lightbox and all three routes;
-- confirm `v2/` and `en/` retain `noindex` if that remains the owner decision.
+- serve locally and check desktop/mobile layouts, playback, posters, lightbox and all four routes;
+- confirm `v2/`, `en/` and `agency/` retain `noindex` if that remains the owner decision.
 
 Push to `main` is a production publication action, not just a backup. Show the intended diff first and perform a Pages/hard-refresh smoke after publication.
