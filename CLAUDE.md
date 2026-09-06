@@ -13,10 +13,11 @@ This directory is the independent public repository published with GitHub Pages.
 - `index.html` + `videos/manifest.json` — main portfolio.
 - `v2/index.html` + `v2/manifest.json` — reduced safe/NDA-conscious selection.
 - `en/index.html` + `en/manifest.json` — English LetMeSolveThis surface; its selection is synchronized manually with v2.
-- `agency/index.html` + `agency/projects.json` — agency case-based surface. Includes the union of the main and v2 selections by owner request; it does not inherit v2's reduced-selection designation. Client grouping and project-level theses are manual; unknown clients remain blank. Keep test assignments labelled as tests. Individual videos have no descriptions.
+- `agency/index.html`, `styles.css`, `app.js` + `agency/projects.json` — generated agency landing and public delivery manifest (`schemaVersion: 2`). Approved project copy is maintained outside this public repo. The export groups work by client, preserves anonymous cases and excludes unapproved examples; it is not a blind union of main/v2. Individual videos have titles without descriptions. Exported HTML and delivery data must stay in sync.
+- `agency/media/` — only compressed media actually used by the active agency landing. Source masters, intake manifests, research, QA reports and the rejected design do not belong here.
 - `videos/` — shared full, preview and poster assets used by manifests.
 
-The parent private repo owns the generation scripts. Do not hand-edit generated main-manifest fields without checking that workflow. The English manifest is intentionally manual, so a v2 selection change requires an explicit en review rather than blind copying.
+Generation scripts live outside this public repo. Do not hand-edit generated main-manifest fields or agency export files without checking their source workflow. The English manifest is intentionally manual, so a v2 selection change requires an explicit en review rather than blind copying.
 
 ## Asset lifecycle
 
@@ -38,5 +39,6 @@ Before commit:
 - inspect `git diff --check` and `git status -sb`;
 - serve locally and check desktop/mobile layouts, playback, posters, lightbox and all four routes;
 - confirm `v2/`, `en/` and `agency/` retain `noindex` if that remains the owner decision.
+- check agency deep links, image galleries and brief copying; verify public HTML/code hashes after Pages finishes, not just its HTTP status.
 
 Push to `main` is a production publication action, not just a backup. Show the intended diff first and perform a Pages/hard-refresh smoke after publication.

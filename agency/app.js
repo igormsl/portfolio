@@ -1,177 +1,74 @@
-'use strict';
+const caseDialog=document.getElementById('case-dialog');
+const videoDialog=document.getElementById('video-dialog');
+const briefDialog=document.getElementById('brief-dialog');
+const video=document.getElementById('player');
+function openCase(id){const t=document.getElementById('case-'+id);if(!t)return;document.getElementById('case-content').replaceChildren(t.content.cloneNode(true));caseDialog.showModal();caseDialog.scrollTop=0;}
+function openVideo(button){document.getElementById('video-title').textContent=button.dataset.title;const url=button.dataset.src;document.getElementById('video-error').hidden=true;document.getElementById('video-fallback').href=url;video.src=url;videoDialog.showModal();video.play().catch(()=>{});}
+document.addEventListener('click',async e=>{const c=e.target.closest('[data-case]');if(c)openCase(c.dataset.case);const v=e.target.closest('[data-video]');if(v)openVideo(v);const x=e.target.closest('[data-close]');if(x)document.getElementById(x.dataset.close).close();const b=e.target.closest('[data-brief]');if(b){if(b.dataset.brief)document.getElementById('service-choice').value=b.dataset.brief;briefDialog.showModal();}const f=e.target.closest('[data-filter]');if(f){const area=f.closest('[data-filter-scope]');area.querySelectorAll('[data-filter]').forEach(p=>p.setAttribute('aria-pressed',String(p===f)));let count=0;area.querySelectorAll('[data-category]').forEach(item=>{item.hidden=f.dataset.filter!=='all'&&item.dataset.category!==f.dataset.filter;if(!item.hidden)count++;});area.querySelector('[data-count]').textContent='Показано: '+count;}if(e.target.closest('#copy-brief')){const text='Здравствуйте! Интересует '+document.getElementById('service-choice').value+'. '+document.getElementById('task-text').value;try{await navigator.clipboard.writeText(text);document.getElementById('copy-status').textContent='Текст скопирован. Отправьте его в Telegram.';}catch{document.getElementById('copy-status').textContent='Копирование недоступно. Выделите и скопируйте текст задачи вручную.';}}});
+document.querySelectorAll('dialog').forEach(d=>{d.addEventListener('click',e=>{if(e.target!==d)return;const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();});});
+videoDialog.addEventListener('close',()=>{video.pause();video.removeAttribute('src');video.load();});
+video.addEventListener('error',()=>{if(video.getAttribute('src'))document.getElementById('video-error').hidden=false;});
 
-const mediaRoot = '../videos/';
-const list = document.getElementById('project-list');
-const dialog = document.getElementById('player');
-const fullVideo = document.getElementById('full-video');
-const playerError = document.getElementById('player-error');
-const toggle = document.getElementById('preview-toggle');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const visiblePreviews = new Set();
-let previewsEnabled = !reducedMotion.matches && !navigator.connection?.saveData;
-let returnFocus = null;
-let previewObserver = null;
-
-function element(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text !== undefined) node.textContent = text;
-  return node;
-}
-
-function renderWork(work) {
-  const figure = element('figure', `work${work.orient === 'v' ? ' vertical' : ''}`);
-  const button = element('button', 'frame');
-  button.type = 'button';
-  button.dataset.slug = work.slug;
-  button.setAttribute('aria-label', `Смотреть: ${work.title}`);
-  const poster = element('img');
-  poster.src = `${mediaRoot}${work.slug}.jpg`;
-  poster.alt = '';
-  poster.loading = 'lazy';
-  poster.decoding = 'async';
-  const preview = element('video', 'preview');
-  preview.dataset.src = `${mediaRoot}${work.slug}.preview.mp4`;
-  preview.poster = poster.src;
-  preview.muted = true;
-  preview.loop = true;
-  preview.playsInline = true;
-  preview.preload = 'none';
-  preview.tabIndex = -1;
-  preview.setAttribute('aria-hidden', 'true');
-  preview.addEventListener('error', () => { preview.hidden = true; });
-  const icon = element('span', 'play-icon');
-  icon.setAttribute('aria-hidden', 'true');
-  icon.innerHTML = '<svg viewBox="0 0 20 20"><path d="M5 2 18 10 5 18Z"/></svg>';
-  button.append(poster, preview, icon);
-  button.addEventListener('click', () => openPlayer(work, button));
-  figure.append(button, element('figcaption', '', work.title));
-  return figure;
-}
-
-function renderProject(project, index) {
-  const section = element('article', 'case');
-  section.id = project.id;
-  section.setAttribute('aria-labelledby', `${project.id}-title`);
-  const meta = element('div', 'case-meta');
-  const kicker = element('p', 'case-kicker');
-  kicker.append(element('span', 'case-num', String(index + 1).padStart(2, '0')));
-  const kind = {client: 'Заказчик', project: 'Проект', original: 'Авторский проект', test: 'Тестовое задание'};
-  kicker.append(element('span', '', kind[project.kind] || 'Проект'));
-  const title = element('h3', 'case-title', project.client || project.title);
-  title.id = `${project.id}-title`;
-  const theses = element('ul', 'case-theses');
-  project.theses.forEach(thesis => theses.append(element('li', '', thesis)));
-  if (!project.theses.length) theses.setAttribute('aria-hidden', 'true');
-  const description = element('p', 'case-description', project.description);
-  if (!project.description) description.setAttribute('aria-hidden', 'true');
-  const media = element('div', `case-media${project.works.length === 1 ? ' single' : ''}`);
-  project.works.forEach(work => media.append(renderWork(work)));
-  meta.append(kicker, title, theses, description);
-  section.append(meta, media);
-  return section;
-}
-
-function syncPreviews() {
-  toggle.setAttribute('aria-pressed', String(previewsEnabled));
-  toggle.textContent = previewsEnabled ? 'Превью: вкл.' : 'Превью: выкл.';
-  document.querySelectorAll('video.preview').forEach(video => {
-    if (previewsEnabled && !dialog.open && !document.hidden && visiblePreviews.has(video) && !video.hidden) {
-      if (!video.getAttribute('src')) video.src = video.dataset.src;
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
-  });
-}
-
-function initPreviews() {
-  previewObserver?.disconnect();
-  visiblePreviews.clear();
-  previewObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) visiblePreviews.add(entry.target);
-      else visiblePreviews.delete(entry.target);
-    });
-    syncPreviews();
-  }, {threshold: .25});
-  document.querySelectorAll('video.preview').forEach(video => previewObserver.observe(video));
-  toggle.hidden = false;
-  syncPreviews();
-}
-
-function startFullVideo() {
-  fullVideo.play().catch(error => {
-    if (!dialog.open || error.name === 'AbortError' || error.name === 'NotAllowedError') return;
-    playerError.hidden = false;
-  });
-}
-
-function openPlayer(work, trigger) {
-  returnFocus = trigger;
-  playerError.hidden = true;
-  document.getElementById('player-title').textContent = work.title;
-  dialog.classList.toggle('vertical', work.orient === 'v');
-  fullVideo.poster = `${mediaRoot}${work.slug}.jpg`;
-  fullVideo.src = `${mediaRoot}${work.slug}.mp4`;
-  dialog.showModal();
-  document.body.classList.add('player-open');
-  syncPreviews();
-  startFullVideo();
-}
-
-document.getElementById('close-player').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', event => {
-  if (event.target !== dialog) return;
-  const box = dialog.getBoundingClientRect();
-  if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
-});
-dialog.addEventListener('close', () => {
-  fullVideo.pause();
-  fullVideo.removeAttribute('src');
-  fullVideo.load();
-  document.body.classList.remove('player-open');
-  returnFocus?.focus({preventScroll: true});
-  returnFocus = null;
-  syncPreviews();
-});
-fullVideo.addEventListener('contextmenu', event => event.preventDefault());
-fullVideo.addEventListener('error', () => { if (dialog.open) playerError.hidden = false; });
-document.getElementById('retry-video').addEventListener('click', () => {
-  playerError.hidden = true;
-  fullVideo.load();
-  startFullVideo();
-});
-toggle.addEventListener('click', () => { previewsEnabled = !previewsEnabled; syncPreviews(); });
-reducedMotion.addEventListener('change', () => { previewsEnabled = !reducedMotion.matches && !navigator.connection?.saveData; syncPreviews(); });
-document.addEventListener('visibilitychange', syncPreviews);
-
-async function loadProjects() {
-  list.setAttribute('aria-busy', 'true');
-  try {
-    const response = await fetch('projects.json');
-    if (!response.ok) throw new Error(`Projects: HTTP ${response.status}`);
-    const data = await response.json();
-    if (!Array.isArray(data.projects)) throw new Error('Projects must be an array');
-    const projects = data.projects.map(renderProject);
-    list.replaceChildren(...projects);
-    document.getElementById('project-count').textContent = String(projects.length).padStart(2, '0');
-    if (!projects.length) list.append(element('p', 'status', 'Проекты скоро появятся.'));
-    initPreviews();
-    if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
-  } catch (error) {
-    const message = element('div', 'status');
-    message.setAttribute('role', 'alert');
-    message.append(element('p', '', 'Не удалось загрузить проекты. Проверьте соединение и попробуйте ещё раз.'));
-    const retry = element('button', 'button', 'Повторить загрузку');
-    retry.type = 'button';
-    retry.addEventListener('click', loadProjects);
-    message.append(retry);
-    list.replaceChildren(message);
-    console.error(error);
-  } finally {
-    list.setAttribute('aria-busy', 'false');
+// Muted, one-at-a-time previews. Full video only starts after an explicit click.
+(() => {
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)'),toggle=document.getElementById('motion-toggle');
+ let enabled=!reduce.matches&&!navigator.connection?.saveData,active=null,hovered=null;
+ const visible=new Map(),watched=new WeakSet();
+ const modal=()=>[...document.querySelectorAll('dialog[open]')].at(-1);
+ const pause=v=>{v.pause();v.classList.remove('is-playing');if(v.getAttribute('src')){v.removeAttribute('src');v.load();}};
+ function label(){toggle.setAttribute('aria-pressed',String(enabled));toggle.textContent=enabled?'Пауза превью  Ⅱ':'Включить превью  ▶';}
+ function choose(){
+  const dialog=modal();
+  const allowed=v=>visible.get(v)>.4&&!v.closest('[hidden]')&&(!dialog||dialog.id==='case-dialog'&&dialog.contains(v));
+  let next=null;
+  if(enabled&&!document.hidden&&(!dialog||dialog.id==='case-dialog')){
+   next=hovered&&allowed(hovered)?hovered:[...visible.keys()].find(v=>v.isConnected&&allowed(v));
   }
-}
+  if(active===next)return;if(active)pause(active);active=next;
+  if(next){next.muted=true;if(!next.getAttribute('src'))next.src=next.dataset.preview;next.play().then(()=>{if(active===next)next.classList.add('is-playing');else pause(next);}).catch(()=>{next.classList.remove('is-playing');});}
+ }
+ const observer=new IntersectionObserver(entries=>{for(const e of entries)visible.set(e.target,e.intersectionRatio);choose();},{threshold:[0,.4,.7]});
+ function init(){
+  for(const v of visible.keys())if(!v.isConnected){pause(v);observer.unobserve(v);visible.delete(v);}
+  document.querySelectorAll('[data-preview]').forEach(v=>{if(watched.has(v))return;watched.add(v);observer.observe(v);const button=v.closest('button');if(button){button.addEventListener('pointerenter',()=>{hovered=v;choose();});button.addEventListener('pointerleave',()=>{hovered=null;choose();});button.addEventListener('focus',()=>{hovered=v;choose();});button.addEventListener('blur',()=>{hovered=null;choose();});}});
+  document.querySelectorAll('[data-gallery]').forEach(g=>{if(g.dataset.ready)return;g.dataset.ready='true';const track=g.querySelector('.gallery-track'),slides=[...track.children],counter=g.querySelector('[data-gallery-count]');let index=0;
+   function update(){index=slides.reduce((best,s,i)=>Math.abs(s.offsetLeft-track.offsetLeft-track.scrollLeft)<Math.abs(slides[best].offsetLeft-track.offsetLeft-track.scrollLeft)?i:best,0);counter.textContent=(index+1)+' / '+slides.length;g.querySelector('[data-slide="-1"]').disabled=track.scrollLeft<2;g.querySelector('[data-slide="1"]').disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-3;}
+   const go=step=>{const target=slides[Math.max(0,Math.min(slides.length-1,index+step))];track.scrollTo({left:target.offsetLeft-slides[0].offsetLeft,behavior:reduce.matches?'auto':'smooth'});};
+   g.querySelectorAll('[data-slide]').forEach(b=>b.addEventListener('click',()=>go(Number(b.dataset.slide))));track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();go(e.key==='ArrowLeft'?-1:1);}if(e.key==='Home'||e.key==='End'){e.preventDefault();track.scrollTo({left:e.key==='Home'?0:track.scrollWidth,behavior:'instant'});}});track.addEventListener('scroll',update,{passive:true});new ResizeObserver(update).observe(track);update();
+  });choose();
+ }
+ toggle.addEventListener('click',()=>{enabled=!enabled;label();choose();});reduce.addEventListener('change',()=>{enabled=!reduce.matches&&!navigator.connection?.saveData;label();choose();});document.addEventListener('visibilitychange',choose);
+ const mutation=new MutationObserver(()=>init());mutation.observe(document.getElementById('case-content'),{childList:true});
+ document.querySelectorAll('dialog').forEach(d=>{new MutationObserver(choose).observe(d,{attributes:true,attributeFilter:['open']});d.addEventListener('close',choose);});
+ document.addEventListener('click',e=>{
+  const jump=e.target.closest('[data-case-jump]');
+  if(jump){const target=document.getElementById(jump.dataset.caseJump);if(target){target.focus({preventScroll:true});target.scrollIntoView({behavior:reduce.matches?'instant':'smooth',block:'start'});}return;}
+  const b=e.target.closest('[data-image]');if(!b)return;const d=document.getElementById('image-dialog'),img=document.getElementById('large-image');img.src=b.dataset.image;img.alt=b.dataset.title;document.getElementById('image-title').textContent=b.dataset.title;d.showModal();choose();
+ });
+ document.getElementById('image-dialog').addEventListener('click',e=>{if(e.target.id==='image-dialog')e.target.close();});
+ label();init();
+})();
 
-loadProjects();
+// Public case URLs retain the original client links after regrouping.
+(() => {
+ const aliases={
+  'business-ai-channel':'nikolay-khlebinskiy','brazil-conference':'hash-hedge',
+  'ai-host':'lara-trader','azu':'mamina-nedelka','animated-short':'mamina-nedelka',
+  'animated-series':'ai-stories','fruit-drama':'ai-stories','digital-character':'hash-hedge',
+  'company-promo':'hash-hedge','website-banner':'hash-hedge','vertical-campaign':'hash-hedge',
+  'english-project-one':'lara-trader','english-project-two':'lara-trader',
+  'product-guide':'hash-hedge','trading-explainer':'lara-trader',
+  'fedos':'editing','finance-video':'editing','new-year-video':'editing','match-tv':'projects'
+ };
+ function followHash(){
+  let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
+  id=aliases[id]||id;
+  if(document.getElementById('case-'+id)){openCase(id);history.replaceState(null,'','#'+id);}
+  else if(aliases[location.hash.slice(1)])document.getElementById(id)?.scrollIntoView();
+ }
+ document.addEventListener('click',e=>{const button=e.target.closest('[data-case]');if(button)history.replaceState(null,'','#'+button.dataset.case);});
+ caseDialog.addEventListener('close',()=>{if(!caseDialog.open&&document.getElementById('case-'+location.hash.slice(1)))history.replaceState(null,'','#projects');});
+ document.querySelectorAll('video').forEach(v=>v.addEventListener('contextmenu',e=>e.preventDefault()));
+ window.addEventListener('hashchange',followHash);
+ followHash();
+})();
