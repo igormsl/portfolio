@@ -15,8 +15,8 @@ The agency surface is a static editorial landing with selected client cases, sep
 
 ## Local check
 
-Serve the directory with a static HTTP server, then verify all four routes, responsive layout, full/preview playback, posters and lightbox. Before publication, also parse each manifest plus `agency/projects.json` and confirm every referenced local asset exists. Agency playback uses keyboard-accessible dialogs. Video collections use horizontal swipe rails on phones and tablets, and grids on desktop; image galleries support arrows and zoom. Preview animation can be paused and respects reduced-motion and data-saving preferences. Old agency case hashes redirect to their regrouped case or section.
+Serve the directory with a static HTTP server, then verify all four routes, responsive layout, full/preview playback, posters and lightbox. Before publication, also parse each manifest plus `agency/projects.json` and confirm every referenced local asset exists. Agency playback uses keyboard-accessible dialogs with previous/next video controls. AI and editing collections have a large selected preview and thumbnail navigation, with horizontal swipe on touch screens. Client cases keep their own galleries, including contact sheets, campaign artwork and image zoom. Preview animation can be paused and respects reduced-motion and data-saving preferences. Old agency case hashes redirect to their regrouped case or section.
 
-The agency landing has no contact form and no links to client social profiles. Visitors can open either approved Telegram contact directly. No backend or analytics service is required. The agency, v2 and English routes retain `noindex`.
+The agency landing has no contact form and no links to client social profiles. Its only contact is [@kseniapetel](https://t.me/kseniapetel), including the header and no-JavaScript fallback. No backend or analytics service is required. The agency, v2 and English routes retain `noindex`.
 
 Changes pushed to `main` publish through GitHub Pages. Browser/CDN cache may require a hard refresh after the deployment completes.
