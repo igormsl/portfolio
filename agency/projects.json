@@ -31,6 +31,14 @@
       "qualification": "Результат канала за указанный период.",
       "works": [
         {
+          "title": "Серебряков · тизер подкаста",
+          "section": "Подкасты",
+          "id": "nikolay-01",
+          "video": "media/nikolay-01.mp4",
+          "poster": "media/intake-2026-09-13/nikolay-covers-01.jpg",
+          "preview": "media/nikolay-01.preview.mp4"
+        },
+        {
           "title": "Черкесов · тизер подкаста",
           "section": "Подкасты",
           "id": "nikolay-02",
@@ -47,6 +55,14 @@
           "preview": "media/nikolay-03.preview.mp4"
         },
         {
+          "title": "Никитин · тизер подкаста",
+          "section": "Подкасты",
+          "id": "podcast-nikitin",
+          "video": "../videos/podcast-nikitin.mp4",
+          "poster": "../videos/podcast-nikitin.jpg",
+          "preview": "../videos/podcast-nikitin.preview.mp4"
+        },
+        {
           "title": "OpenClaw · тизер соло-выпуска",
           "section": "Соло-выпуски",
           "id": "nikolay-solo-01",
@@ -55,12 +71,73 @@
           "preview": "media/nikolay-solo-01.preview.mp4"
         },
         {
+          "title": "Идеи на миллиард · тизер соло-выпуска",
+          "section": "Соло-выпуски",
+          "id": "nikolay-solo-02",
+          "video": "media/nikolay-solo-02.mp4",
+          "poster": "media/nikolay-solo-02.jpg",
+          "preview": "media/nikolay-solo-02.preview.mp4"
+        },
+        {
+          "title": "GPT против Claude · тизер соло-выпуска",
+          "section": "Соло-выпуски",
+          "id": "nikolay-solo-battle",
+          "video": "media/intake-2026-09-13/nikolay-solo-battle.mp4",
+          "poster": "media/intake-2026-09-13/nikolay-solo-battle.jpg",
+          "preview": "media/intake-2026-09-13/nikolay-solo-battle.preview.mp4"
+        },
+        {
+          "title": "Shorts о бизнесе",
+          "section": "Shorts",
+          "id": "shorts-edu-channel",
+          "video": "../videos/shorts-edu-channel.mp4",
+          "poster": "../videos/shorts-edu-channel.jpg",
+          "preview": "../videos/shorts-edu-channel.preview.mp4"
+        },
+        {
+          "title": "Автоматизировали «Глаз Бога»",
+          "section": "Shorts",
+          "id": "nikolay-04",
+          "video": "media/nikolay-04.mp4",
+          "poster": "media/nikolay-04.jpg",
+          "preview": "media/nikolay-04.preview.mp4"
+        },
+        {
           "title": "Codex как агент",
           "section": "Shorts",
           "id": "nikolay-05",
           "video": "media/nikolay-05.mp4",
           "poster": "media/nikolay-05.jpg",
           "preview": "media/nikolay-05.preview.mp4"
+        }
+      ],
+      "galleries": [
+        {
+          "title": "Обложки выпусков",
+          "intro": "Оформление подкастов и соло-выпусков: тема, герой и визуальный акцент.",
+          "layout": "covers",
+          "items": [
+            {
+              "title": "Александр Серебряков · AI-агенты",
+              "src": "media/intake-2026-09-13/nikolay-covers-01.jpg"
+            },
+            {
+              "title": "Codex и Claude",
+              "src": "media/intake-2026-09-13/nikolay-covers-02.jpg"
+            },
+            {
+              "title": "Александр Толмачев · документы",
+              "src": "media/intake-2026-09-13/nikolay-covers-03.jpg"
+            },
+            {
+              "title": "Дмитрий Лукашев · Telegram",
+              "src": "media/intake-2026-09-13/nikolay-covers-04.jpg"
+            },
+            {
+              "title": "ИИ-агент и amoCRM",
+              "src": "media/intake-2026-09-13/nikolay-covers-05.jpg"
+            }
+          ]
         }
       ]
     },
@@ -113,6 +190,22 @@
           "preview": "../videos/ai-avatar.preview.mp4"
         },
         {
+          "title": "Цифровой персонаж · Day 1",
+          "section": "Цифровой персонаж",
+          "id": "hash-hedge-day-1",
+          "video": "media/intake-2026-09-13/hash-hedge-day-1.mp4",
+          "poster": "media/intake-2026-09-13/hash-hedge-day-1.jpg",
+          "preview": "media/intake-2026-09-13/hash-hedge-day-1.preview.mp4"
+        },
+        {
+          "title": "Цифровой персонаж · Day 2",
+          "section": "Цифровой персонаж",
+          "id": "hash-hedge-day-2",
+          "video": "media/intake-2026-09-13/hash-hedge-day-2.mp4",
+          "poster": "media/intake-2026-09-13/hash-hedge-day-2.jpg",
+          "preview": "media/intake-2026-09-13/hash-hedge-day-2.preview.mp4"
+        },
+        {
           "title": "Конференция в Бразилии",
           "section": "Видео о событиях",
           "id": "event-brazil-recap",
@@ -132,7 +225,7 @@
     },
     {
       "id": "ternes",
-      "title": "TERNES",
+      "title": "Первая Арктическая",
       "subtitle": "Тексты, дизайн и видео для пивоварни",
       "category": "channel",
       "role": "Ведение соцсетей · тексты · дизайн · видео",
@@ -147,6 +240,14 @@
       "result": "Для соцсетей подготовили продуктовые визуалы, видео и тексты в общей стилистике бренда.",
       "works": [
         {
+          "title": "Продуктовая история",
+          "section": "Продуктовое видео",
+          "id": "arctic-product-film",
+          "video": "media/intake-2026-09-13/arctic-product-film.mp4",
+          "poster": "media/intake-2026-09-13/arctic-product-film.jpg",
+          "preview": "media/intake-2026-09-13/arctic-product-film.preview.mp4"
+        },
+        {
           "title": "Хефевайцен · продуктовый ролик",
           "section": "Продуктовое видео",
           "id": "ternes-1298",
@@ -157,6 +258,21 @@
       ],
       "galleries": [
         {
+          "title": "Продукт в кадре",
+          "intro": "Предметные сцены на природе: цвет упаковки, свет и детали.",
+          "layout": "instagram",
+          "items": [
+            {
+              "title": "Продуктовая съёмка · в лесу",
+              "src": "media/intake-2026-09-13/arctic-photos-01.jpg"
+            },
+            {
+              "title": "Продуктовая съёмка · крупный план",
+              "src": "media/intake-2026-09-13/arctic-photos-02.jpg"
+            }
+          ]
+        },
+        {
           "title": "Дизайн постов и продуктовые визуалы",
           "label": "Контент для соцсетей",
           "intro": "Оформление публикаций о сортах: продуктовые сцены, образы и графика в стилистике бренда.",
@@ -166,12 +282,22 @@
               "src": "media/showcase/ternes-1289.jpg"
             },
             {
-              "title": "Дункель · подача сорта",
-              "src": "media/showcase/ternes-1299.jpg"
-            },
-            {
               "title": "Северные вкусы · креатив",
               "src": "media/showcase/ternes-1291.jpg"
+            }
+          ]
+        },
+        {
+          "title": "Битва вкусов",
+          "layout": "instagram",
+          "items": [
+            {
+              "title": "Кольское золотое",
+              "src": "media/intake-2026-09-13/arctic-design-01.jpg"
+            },
+            {
+              "title": "Кольское классическое",
+              "src": "media/intake-2026-09-13/arctic-design-02.jpg"
             }
           ]
         }
@@ -188,10 +314,27 @@
       "actions": [
         "Составляли контент-план: макияжи, обзоры косметики и полезные советы.",
         "Писали сценарии и монтировали короткие видео.",
+        "Оформляли фотосерии и карусели с обзорами косметики и ароматов.",
         "Готовили материалы и публиковали их в Instagram, TikTok и Telegram."
       ],
       "result": "Блог получал готовые обзоры, советы и креативные образы для регулярных публикаций.",
       "works": [
+        {
+          "title": "Бьюти 1",
+          "section": "Короткие видео",
+          "id": "shorts-beauty-1",
+          "video": "../videos/shorts-beauty-1.mp4",
+          "poster": "media/intake-2026-09-13/shorts-beauty-1.jpg",
+          "preview": "../videos/shorts-beauty-1.preview.mp4"
+        },
+        {
+          "title": "Бьюти 2",
+          "section": "Короткие видео",
+          "id": "shorts-beauty-2",
+          "video": "../videos/shorts-beauty-2.mp4",
+          "poster": "media/intake-2026-09-13/shorts-beauty-2.jpg",
+          "preview": "../videos/shorts-beauty-2.preview.mp4"
+        },
         {
           "title": "Можно ли точить карандаш в пластике?",
           "section": "Короткие видео",
@@ -207,6 +350,38 @@
           "video": "media/showcase/lyolkam-5n5NuJ2VFTo.mp4",
           "poster": "media/showcase/lyolkam-5n5NuJ2VFTo.jpg",
           "preview": "media/showcase/lyolkam-5n5NuJ2VFTo.preview.mp4"
+        },
+        {
+          "title": "Beauty Bomb × Смешарики · обзор",
+          "section": "Короткие видео",
+          "id": "lyolkam-7ej4fkj9Q2U",
+          "video": "media/showcase/lyolkam-7ej4fkj9Q2U.mp4",
+          "poster": "media/showcase/lyolkam-7ej4fkj9Q2U.jpg",
+          "preview": "media/showcase/lyolkam-7ej4fkj9Q2U.preview.mp4"
+        },
+        {
+          "title": "Dopamine makeup",
+          "section": "Короткие видео",
+          "id": "lyolkam-dopamine",
+          "video": "media/intake-2026-09-13/lyolkam-dopamine.mp4",
+          "poster": "media/intake-2026-09-13/lyolkam-dopamine.jpg",
+          "preview": "media/intake-2026-09-13/lyolkam-dopamine.preview.mp4"
+        },
+        {
+          "title": "Макияж крупным планом",
+          "section": "Короткие видео",
+          "id": "lyolkam-makeup-detail",
+          "video": "media/intake-2026-09-13/lyolkam-makeup-detail.mp4",
+          "poster": "media/intake-2026-09-13/lyolkam-makeup-detail.jpg",
+          "preview": "media/intake-2026-09-13/lyolkam-makeup-detail.preview.mp4"
+        },
+        {
+          "title": "Get Ready With Me",
+          "section": "Короткие видео",
+          "id": "lyolkam-get-ready",
+          "video": "media/intake-2026-09-13/lyolkam-get-ready.mp4",
+          "poster": "media/intake-2026-09-13/lyolkam-get-ready.jpg",
+          "preview": "media/intake-2026-09-13/lyolkam-get-ready.preview.mp4"
         }
       ],
       "galleries": [
@@ -214,14 +389,131 @@
           "title": "Образ крупным планом",
           "label": "Визуалы бьюти-блога",
           "intro": "Креативный макияж и работа с цветом. Фото дополняют видео: дают рассмотреть детали образа и результат использования продукта.",
+          "layout": "instagram",
           "items": [
             {
-              "title": "Креативный макияж",
+              "title": "Розовый макияж · детали",
+              "src": "media/intake-2026-09-13/lyolkam-lookbook-01.jpg"
+            },
+            {
+              "title": "Зелёный макияж · портрет",
+              "src": "media/intake-2026-09-13/lyolkam-lookbook-02.jpg"
+            },
+            {
+              "title": "Образ с палеткой · крупный план",
+              "src": "media/intake-2026-09-13/lyolkam-lookbook-03.jpg"
+            },
+            {
+              "title": "Креативный макияж · публикация",
               "src": "media/lyolkam/lyolkam-1955.jpg"
             },
             {
-              "title": "Образ с палеткой Green Silence",
+              "title": "Макияж с Green Silence · публикация",
               "src": "media/lyolkam/lyolkam-1979.jpg"
+            }
+          ]
+        },
+        {
+          "title": "ONCEMORE",
+          "layout": "instagram",
+          "items": [
+            {
+              "title": "Коллекция",
+              "src": "media/intake-2026-09-13/lyolkam-oncemore-01.jpg"
+            },
+            {
+              "title": "Румяна",
+              "src": "media/intake-2026-09-13/lyolkam-oncemore-02.jpg"
+            },
+            {
+              "title": "Хайлайтер",
+              "src": "media/intake-2026-09-13/lyolkam-oncemore-03.jpg"
+            },
+            {
+              "title": "Пудра",
+              "src": "media/intake-2026-09-13/lyolkam-oncemore-04.jpg"
+            },
+            {
+              "title": "Крайон",
+              "src": "media/intake-2026-09-13/lyolkam-oncemore-05.jpg"
+            },
+            {
+              "title": "Термотушь",
+              "src": "media/intake-2026-09-13/lyolkam-oncemore-06.jpg"
+            }
+          ]
+        },
+        {
+          "title": "Кисти для макияжа",
+          "layout": "instagram",
+          "items": [
+            {
+              "title": "Детальные кисти",
+              "src": "media/intake-2026-09-13/lyolkam-brushes-01.jpg"
+            },
+            {
+              "title": "MINNY",
+              "src": "media/intake-2026-09-13/lyolkam-brushes-02.jpg"
+            },
+            {
+              "title": "FLEUR",
+              "src": "media/intake-2026-09-13/lyolkam-brushes-03.jpg"
+            },
+            {
+              "title": "SIA",
+              "src": "media/intake-2026-09-13/lyolkam-brushes-04.jpg"
+            },
+            {
+              "title": "MIA",
+              "src": "media/intake-2026-09-13/lyolkam-brushes-05.jpg"
+            },
+            {
+              "title": "RAVEN",
+              "src": "media/intake-2026-09-13/lyolkam-brushes-06.jpg"
+            },
+            {
+              "title": "KYLIE",
+              "src": "media/intake-2026-09-13/lyolkam-brushes-07.jpg"
+            },
+            {
+              "title": "KENDALL",
+              "src": "media/intake-2026-09-13/lyolkam-brushes-08.jpg"
+            }
+          ]
+        },
+        {
+          "title": "Ароматы · Alchimica Perfume",
+          "layout": "instagram",
+          "items": [
+            {
+              "title": "Alchimica Perfume",
+              "src": "media/intake-2026-09-13/lyolkam-perfume-01.jpg"
+            },
+            {
+              "title": "The Twor · аромат",
+              "src": "media/intake-2026-09-13/lyolkam-perfume-02.jpg"
+            },
+            {
+              "title": "The Twor · образ",
+              "src": "media/intake-2026-09-13/lyolkam-perfume-03.jpg"
+            },
+            {
+              "title": "Flower Field · аромат",
+              "src": "media/intake-2026-09-13/lyolkam-perfume-04.jpg"
+            },
+            {
+              "title": "Flower Field · образ",
+              "src": "media/intake-2026-09-13/lyolkam-perfume-05.jpg"
+            }
+          ]
+        },
+        {
+          "title": "Каялы",
+          "layout": "instagram",
+          "items": [
+            {
+              "title": "Каялы",
+              "src": "media/intake-2026-09-13/lyolkam-kajals-01.jpg"
             }
           ]
         }
@@ -302,7 +594,32 @@
         "Сценарии и монтаж",
         "Рекламные креативы"
       ],
-      "works": [],
+      "works": [
+        {
+          "title": "Обзор квартиры и района",
+          "section": "Reels",
+          "id": "ruslan-reels-01",
+          "video": "media/intake-2026-09-13/ruslan-reels-01.mp4",
+          "poster": "media/intake-2026-09-13/ruslan-reels-01.jpg",
+          "preview": "media/intake-2026-09-13/ruslan-reels-01.preview.mp4"
+        },
+        {
+          "title": "Предложение квартиры",
+          "section": "Reels",
+          "id": "ruslan-reels-02",
+          "video": "media/intake-2026-09-13/ruslan-reels-02.mp4",
+          "poster": "media/intake-2026-09-13/ruslan-reels-02.jpg",
+          "preview": "media/intake-2026-09-13/ruslan-reels-02.preview.mp4"
+        },
+        {
+          "title": "Квартира с ремонтом",
+          "section": "Reels",
+          "id": "ruslan-reels-03",
+          "video": "media/intake-2026-09-13/ruslan-reels-03.mp4",
+          "poster": "media/intake-2026-09-13/ruslan-reels-03.jpg",
+          "preview": "media/intake-2026-09-13/ruslan-reels-03.preview.mp4"
+        }
+      ],
       "galleries": [
         {
           "title": "Как подали предложения в Reels",
@@ -397,6 +714,24 @@
   ],
   "ai": [
     {
+      "title": "AI-интро",
+      "section": "Интро",
+      "credit": "Монтаж · Хедлайнер",
+      "id": "ai-intro-headliners",
+      "video": "../videos/ai-intro-headliners.mp4",
+      "poster": "../videos/ai-intro-headliners.jpg",
+      "preview": "../videos/ai-intro-headliners.preview.mp4"
+    },
+    {
+      "title": "Prodaction ADS",
+      "section": "AI-реклама",
+      "credit": "AI-контент",
+      "id": "production-ads",
+      "video": "media/intake-2026-09-13/production-ads.mp4",
+      "poster": "media/intake-2026-09-13/production-ads.jpg",
+      "preview": "media/intake-2026-09-13/production-ads.preview.mp4"
+    },
+    {
       "title": "Азу · история с персонажем",
       "section": "Персонажи и истории",
       "credit": "Сценарий и монтаж · Мамина неделька",
@@ -431,15 +766,6 @@
       "video": "../videos/ai-fruit-drama.mp4",
       "poster": "../videos/ai-fruit-drama.jpg",
       "preview": "../videos/ai-fruit-drama.preview.mp4"
-    },
-    {
-      "title": "AI-интро",
-      "section": "Интро",
-      "credit": "Монтаж · Хедлайнер",
-      "id": "ai-intro-headliners",
-      "video": "../videos/ai-intro-headliners.mp4",
-      "poster": "../videos/ai-intro-headliners.jpg",
-      "preview": "../videos/ai-intro-headliners.preview.mp4"
     },
     {
       "title": "AI-ведущий",
@@ -605,5 +931,27 @@
     }
   ],
   "serviceNote": "Весь выпуск контента или отдельная задача: сценарий, съёмка, монтаж, дизайн, AI-ролик или ведение соцсетей. Формат работы подбираем под ваш проект.",
-  "footerNote": "В каждом кейсе указано, какие задачи мы выполняли."
+  "footerNote": "В каждом кейсе указано, какие задачи мы выполняли.",
+  "featured": [
+    {
+      "title": "Бьюти 1",
+      "section": "Короткие видео",
+      "id": "shorts-beauty-1",
+      "video": "../videos/shorts-beauty-1.mp4",
+      "poster": "media/intake-2026-09-13/shorts-beauty-1.jpg",
+      "preview": "../videos/shorts-beauty-1.preview.mp4"
+    },
+    {
+      "title": "Бьюти 2",
+      "section": "Короткие видео",
+      "id": "shorts-beauty-2",
+      "video": "../videos/shorts-beauty-2.mp4",
+      "poster": "media/intake-2026-09-13/shorts-beauty-2.jpg",
+      "preview": "../videos/shorts-beauty-2.preview.mp4"
+    }
+  ],
+  "showreel": {
+    "video": "media/showreel/agency-reel-v3.mp4",
+    "poster": "media/showreel/poster-v3.jpg"
+  }
 }

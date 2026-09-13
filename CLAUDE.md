@@ -39,6 +39,6 @@ Before commit:
 - inspect `git diff --check` and `git status -sb`;
 - serve locally and check desktop/mobile layouts, playback, posters, lightbox and all four routes;
 - confirm `v2/`, `en/` and `agency/` retain `noindex` if that remains the owner decision.
-- check agency deep links, image galleries, thumbnail selection, phone/tablet swipe and previous/next controls inside the player. The sole Telegram contact is @kseniapetel; there is no brief form. Verify public HTML/code hashes after Pages finishes, not just its HTTP status.
+- check agency deep links, image galleries, thumbnail selection, phone/tablet swipe and previous/next controls inside both video and image dialogs. The case video playlist spans its chapters; visible case previews play together and pause behind a full player or enlarged photo. The sole Telegram contact is @kseniapetel; there is no brief form. Verify public HTML/code hashes after Pages finishes, not just its HTTP status.
 
 Push to `main` is a production publication action, not just a backup. Show the intended diff first and perform a Pages/hard-refresh smoke after publication.
