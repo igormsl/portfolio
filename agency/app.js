@@ -67,6 +67,7 @@ function openCase(id,trigger){
  caseContent.replaceChildren(template.content.cloneNode(true));show(caseDialog,trigger);caseDialog.scrollTop=0;initCarousels();initPreviews();
 }
 function loadImage(index){
+ const focused=document.activeElement;
  imageIndex=Math.max(0,Math.min(imageItems.length-1,index));const button=imageItems[imageIndex];
  const large=document.getElementById('large-image');large.src=button.dataset.image;large.alt=button.dataset.title;
  document.getElementById('image-title').textContent=button.dataset.title;
@@ -74,6 +75,7 @@ function loadImage(index){
  document.querySelector('.image-navigation').hidden=imageItems.length<2;
  document.querySelector('[data-image-step="-1"]').disabled=imageIndex===0;
  document.querySelector('[data-image-step="1"]').disabled=imageIndex===imageItems.length-1;
+ if(focused?.matches('[data-image-step]')&&focused.disabled&&imageItems.length>1)document.querySelector('[data-image-step="'+(imageIndex===0?'1':'-1')+'"]').focus({preventScroll:true});
  const track=button.closest('.carousel-track');
  if(track)track.scrollTo({left:button.closest('.gallery-slide').offsetLeft-track.firstElementChild.offsetLeft,behavior:'instant'});
 }

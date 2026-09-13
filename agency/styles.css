@@ -225,7 +225,7 @@ dialog{border:0;background:var(--paper);color:var(--ink);padding:0;width:min(108
  .player-navigation button{font-size:11px;padding-inline:9px}
 }
 
-/* September media expansion: prominent beauty films and readable photo series. */
+/* Media collections and sequential photo viewing. */
 #projects>.section-head{display:block}
 #projects>.section-head>p{max-width:690px;margin-top:14px}
 #projects-title,#editing-title{text-wrap:initial}
@@ -238,25 +238,6 @@ dialog{border:0;background:var(--paper);color:var(--ink);padding:0;width:min(108
 .reel-bottom{padding-top:12px}
 .screening .play{width:40px;min-height:40px;height:40px;padding:0;font-size:12px;opacity:0;transition:opacity .15s}
 .screening .work:hover .play,.screening .work:focus-visible .play{opacity:1}
-.beauty-feature{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:center;background:#e9e1d8;padding:28px 36px;border-radius:20px;margin:0 0 30px}
-.beauty-copy{max-width:380px}
-.beauty-copy .eyebrow{margin-bottom:20px}
-.beauty-copy h3{font:clamp(38px,4vw,60px)/1.04 Georgia;letter-spacing:-1.7px}
-.beauty-copy h3 em{color:#7c4a4e;font-weight:400}
-.beauty-copy p{font-size:14px;color:var(--muted);margin:20px 0 12px;max-width:310px}
-.beauty-shots{display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0;max-width:490px;justify-self:end;width:100%}
-.beauty-shots .work{padding-bottom:12px;box-shadow:0 10px 25px #563d3015}
-.beauty-shots .work-frame{aspect-ratio:9/13}
-.beauty-shots .work-frame img,.beauty-shots .work-frame video{object-fit:cover}
-.beauty-shots .work-label{padding:10px 14px 0}
-.composition-nikolay-khlebinskiy{grid-template-columns:1.65fr 1fr;grid-template-rows:1fr 1fr;padding:16px 16px 34px;gap:8px;background:#d3dce0}
-.composition-nikolay-khlebinskiy img{object-fit:contain;transform:none!important;box-shadow:none;border-radius:5px;background:#0c1822}
-.composition-nikolay-khlebinskiy img:first-child{grid-row:1/3}
-.composition-hash-hedge{background:#243f42;grid-template-columns:1fr 1.65fr 1fr;gap:8px;padding:16px 16px 34px}
-.composition-hash-hedge img{transform:none!important;box-shadow:none;object-position:center}
-.composition-hash-hedge .cover-caption{color:var(--paper)}
-.composition-ternes{grid-template-columns:1fr 1fr;gap:10px;padding:14px 14px 34px;background:#d9e0cc}
-.composition-ternes img{transform:none!important;box-shadow:none;object-position:center 62%}
 .composition-lyolkam{padding:14px 14px 34px;gap:8px;background:#e6d6d8}
 .composition-lyolkam img{transform:none!important;box-shadow:none;object-position:center 35%}
 .cover-igroray .cover-gallery{background:#e8ced7;padding:16px;gap:10px}
@@ -286,22 +267,8 @@ dialog{border:0;background:var(--paper);color:var(--ink);padding:0;width:min(108
  .portrait-section .works-grid:has(>.work:last-child:nth-child(2)){grid-template-columns:repeat(2,minmax(0,1fr));max-width:690px}
 }
 @media(max-width:1100px){
- .beauty-feature{gap:26px;padding:26px}
- .beauty-copy h3{font-size:44px}
- .beauty-shots .work-frame{aspect-ratio:9/14}
 }
 @media(max-width:760px){
- .beauty-feature{display:block;padding:22px 18px;margin-bottom:26px}
- .beauty-copy{max-width:none}
- .beauty-copy .eyebrow{margin-bottom:12px}
- .beauty-copy h3{font-size:36px;letter-spacing:-1px}
- .beauty-copy h3 br{display:none}
- .beauty-copy h3 em:before{content:' '}
- .beauty-copy p{margin:14px 0 4px;max-width:none;font-size:13px}
- .beauty-shots{margin:18px auto 0;gap:10px;max-width:450px}
- .beauty-shots .work-frame{aspect-ratio:9/16}
- .beauty-shots .work-label{padding:9px 10px 0;font-size:13px}
- .beauty-shots .play{right:8px;bottom:8px;width:32px;height:32px}
  .screening .play{display:none}
  .gallery-instagram{display:block}
  .gallery-instagram>.carousel{max-width:540px;margin-inline:auto}
@@ -311,7 +278,57 @@ dialog{border:0;background:var(--paper);color:var(--ink);padding:0;width:min(108
  .gallery-covers .image-open img{max-height:none;height:auto}
  #projects-title{font-size:clamp(30px,7.9vw,42px)}
  #editing-title{font-size:clamp(26px,6.65vw,40px);letter-spacing:-1px;white-space:nowrap}
- .intro-credit{font-size:10px}
- .reel-alternate{font-size:12px;max-width:190px}
- .composition-nikolay-khlebinskiy{padding:12px 12px 32px}
+.intro-credit{font-size:10px}
+.reel-alternate{font-size:12px;max-width:190px}
+}
+
+/* Owner review: case-first highlights, compact albums and covers from actual work. */
+.cover-frames{height:100%;display:grid;overflow:hidden}
+.cover-frames img{width:100%;height:100%;min-width:0;min-height:0;object-fit:cover}
+.frames-still img{object-position:center 48%}
+.frames-brand-event{grid-template-columns:1.15fr 1fr;gap:3px;background:#1c1b23}
+.frames-brand-event img:first-child{object-fit:contain;padding:12px}
+.frames-brand-event img:last-child{object-position:70% center}
+.frames-product-film{grid-template-columns:1fr 1.3fr 1fr;gap:5px;background:#c1dced;padding:10px}
+.frames-product-film img{border-radius:6px;object-position:center 48%}
+.composition-igroray{background:#f2dce1;padding:14px 28px 34px;gap:12px}
+.composition-igroray img{object-fit:contain;object-position:center;background:#faeff1}
+.feature-section .works-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:590px;margin-inline:auto;overflow:visible;padding:0}
+.feature-section .carousel-controls{display:none}
+.feature-section .work{width:100%;min-width:0;max-width:none}
+.feature-section .work-frame{aspect-ratio:9/12}
+.feature-section .work-frame img,.feature-section .work-frame video{object-fit:cover}
+.case-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.case-photo-grid .case-chapter{margin:0;padding:0;border:0;min-width:0}
+.gallery-compact>h3{font-size:22px;margin:0 0 12px;line-height:1.3}
+.gallery-compact>.carousel{display:flex;flex-direction:column-reverse;min-width:0}
+.gallery-compact .carousel-track{display:flex;gap:0;padding:0;scrollbar-width:none;border-radius:12px}
+.gallery-compact .carousel-track::-webkit-scrollbar{display:none}
+.gallery-compact .gallery-slide{flex:0 0 100%;min-width:0;scroll-snap-stop:always}
+.gallery-compact .image-open{border-radius:0}
+.gallery-compact .image-open img{height:260px;max-height:none;object-fit:contain;padding:0}
+.gallery-compact figcaption{font-size:12px;line-height:1.4;padding:8px 10px;min-height:50px;text-align:center}
+.gallery-compact .carousel-controls{display:flex;justify-content:center;gap:12px;margin:6px 0 0}
+.gallery-compact .carousel-controls>span{order:1;min-width:46px;text-align:center;font-variant-numeric:tabular-nums}
+.gallery-compact .carousel-controls>[data-step="-1"]{order:0}
+.gallery-compact .carousel-controls>[data-step="1"]{order:2}
+@media(max-width:760px){
+ .feature-section .works-grid{gap:10px;max-width:450px}
+ .feature-section .work-frame{aspect-ratio:9/14}
+ .feature-section .work-label{font-size:12px;padding:10px 8px 0}
+ .feature-section .play{width:32px;height:32px;right:8px;bottom:8px}
+ .case-photo-grid{gap:22px 12px;margin-top:22px;padding-top:20px}
+ .gallery-compact>h3{font-size:16px;min-height:42px;margin-bottom:8px}
+ .gallery-compact .image-open img{height:180px}
+ .gallery-compact figcaption{font-size:11px;padding:8px 4px;min-height:48px}
+ .gallery-compact .carousel-controls{gap:2px;margin-top:0}
+ .gallery-compact .carousel-controls>span{min-width:34px;font-size:11px}
+ .gallery-compact .zoom-mark{width:28px;height:28px;bottom:6px;right:6px;font-size:16px}
+ .frames-brand-event img:first-child{padding:6px}
+ .composition-igroray{padding:12px 22px 32px;gap:10px}
+}
+@media(max-width:360px){
+ .case-photo-grid{gap:18px 8px}
+ .gallery-compact .image-open img{height:150px}
+ .gallery-compact .carousel-controls>span{min-width:24px;font-size:10px}
 }

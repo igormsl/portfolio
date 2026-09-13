@@ -29,13 +29,19 @@
       ],
       "result": "За июнь 2025 — май 2026 аудитория канала выросла с 7 000 до 32 000 подписчиков. Работа развивалась от монтажа отдельных видео до организации выпуска подкастов, соло и Shorts.",
       "qualification": "Результат канала за указанный период.",
+      "cover": {
+        "layout": "still",
+        "images": [
+          "media/case-covers-v2/nikolay-studio.jpg"
+        ]
+      },
       "works": [
         {
           "title": "Серебряков · тизер подкаста",
           "section": "Подкасты",
           "id": "nikolay-01",
           "video": "media/nikolay-01.mp4",
-          "poster": "media/intake-2026-09-13/nikolay-covers-01.jpg",
+          "poster": "media/case-covers-v2/nikolay-podcast.jpg",
           "preview": "media/nikolay-01.preview.mp4"
         },
         {
@@ -156,6 +162,13 @@
         "Монтировали видео о конференции в Бразилии и обучающие материалы, объясняющие работу с продуктом."
       ],
       "result": "Проект получал готовый контент для рекламы, сайта, презентации компании и знакомства с продуктом.",
+      "cover": {
+        "layout": "brand-event",
+        "images": [
+          "media/case-covers-v2/hash-brand.jpg",
+          "media/case-covers-v2/hash-event.jpg"
+        ]
+      },
       "works": [
         {
           "title": "Реклама компании",
@@ -238,6 +251,14 @@
         "Готовили публикации и вели соцсети бренда."
       ],
       "result": "Для соцсетей подготовили продуктовые визуалы, видео и тексты в общей стилистике бренда.",
+      "cover": {
+        "layout": "product-film",
+        "images": [
+          "media/case-covers-v2/arctic-city.jpg",
+          "media/case-covers-v2/arctic-detail.jpg",
+          "media/case-covers-v2/arctic-finale.jpg"
+        ]
+      },
       "works": [
         {
           "title": "Продуктовая история",
@@ -320,28 +341,20 @@
       "result": "Блог получал готовые обзоры, советы и креативные образы для регулярных публикаций.",
       "works": [
         {
-          "title": "Бьюти 1",
-          "section": "Короткие видео",
+          "title": "Ароматы на каждый день",
+          "section": "Макияж и обзоры",
           "id": "shorts-beauty-1",
           "video": "../videos/shorts-beauty-1.mp4",
           "poster": "media/intake-2026-09-13/shorts-beauty-1.jpg",
           "preview": "../videos/shorts-beauty-1.preview.mp4"
         },
         {
-          "title": "Бьюти 2",
-          "section": "Короткие видео",
-          "id": "shorts-beauty-2",
-          "video": "../videos/shorts-beauty-2.mp4",
-          "poster": "media/intake-2026-09-13/shorts-beauty-2.jpg",
-          "preview": "../videos/shorts-beauty-2.preview.mp4"
-        },
-        {
-          "title": "Можно ли точить карандаш в пластике?",
-          "section": "Короткие видео",
-          "id": "lyolkam-kYhqzLntacM",
-          "video": "media/showcase/lyolkam-kYhqzLntacM.mp4",
-          "poster": "media/showcase/lyolkam-kYhqzLntacM.jpg",
-          "preview": "media/showcase/lyolkam-kYhqzLntacM.preview.mp4"
+          "title": "Дофамин Мейкап",
+          "section": "Макияж и обзоры",
+          "id": "lyolkam-dopamine",
+          "video": "media/intake-2026-09-13/lyolkam-dopamine.mp4",
+          "poster": "media/intake-2026-09-13/lyolkam-dopamine.jpg",
+          "preview": "media/intake-2026-09-13/lyolkam-dopamine.preview.mp4"
         },
         {
           "title": "Spider-Gwen · креативный макияж",
@@ -358,14 +371,6 @@
           "video": "media/showcase/lyolkam-7ej4fkj9Q2U.mp4",
           "poster": "media/showcase/lyolkam-7ej4fkj9Q2U.jpg",
           "preview": "media/showcase/lyolkam-7ej4fkj9Q2U.preview.mp4"
-        },
-        {
-          "title": "Dopamine makeup",
-          "section": "Короткие видео",
-          "id": "lyolkam-dopamine",
-          "video": "media/intake-2026-09-13/lyolkam-dopamine.mp4",
-          "poster": "media/intake-2026-09-13/lyolkam-dopamine.jpg",
-          "preview": "media/intake-2026-09-13/lyolkam-dopamine.preview.mp4"
         },
         {
           "title": "Макияж крупным планом",
@@ -386,10 +391,9 @@
       ],
       "galleries": [
         {
-          "title": "Образ крупным планом",
+          "title": "Лукбук",
           "label": "Визуалы бьюти-блога",
-          "intro": "Креативный макияж и работа с цветом. Фото дополняют видео: дают рассмотреть детали образа и результат использования продукта.",
-          "layout": "instagram",
+          "layout": "compact",
           "items": [
             {
               "title": "Розовый макияж · детали",
@@ -415,7 +419,7 @@
         },
         {
           "title": "ONCEMORE",
-          "layout": "instagram",
+          "layout": "compact",
           "items": [
             {
               "title": "Коллекция",
@@ -445,7 +449,7 @@
         },
         {
           "title": "Кисти для макияжа",
-          "layout": "instagram",
+          "layout": "compact",
           "items": [
             {
               "title": "Детальные кисти",
@@ -482,8 +486,8 @@
           ]
         },
         {
-          "title": "Ароматы · Alchimica Perfume",
-          "layout": "instagram",
+          "title": "Alchimica Perfume",
+          "layout": "compact",
           "items": [
             {
               "title": "Alchimica Perfume",
@@ -504,16 +508,6 @@
             {
               "title": "Flower Field · образ",
               "src": "media/intake-2026-09-13/lyolkam-perfume-05.jpg"
-            }
-          ]
-        },
-        {
-          "title": "Каялы",
-          "layout": "instagram",
-          "items": [
-            {
-              "title": "Каялы",
-              "src": "media/intake-2026-09-13/lyolkam-kajals-01.jpg"
             }
           ]
         }
@@ -932,26 +926,9 @@
   ],
   "serviceNote": "Весь выпуск контента или отдельная задача: сценарий, съёмка, монтаж, дизайн, AI-ролик или ведение соцсетей. Формат работы подбираем под ваш проект.",
   "footerNote": "В каждом кейсе указано, какие задачи мы выполняли.",
-  "featured": [
-    {
-      "title": "Бьюти 1",
-      "section": "Короткие видео",
-      "id": "shorts-beauty-1",
-      "video": "../videos/shorts-beauty-1.mp4",
-      "poster": "media/intake-2026-09-13/shorts-beauty-1.jpg",
-      "preview": "../videos/shorts-beauty-1.preview.mp4"
-    },
-    {
-      "title": "Бьюти 2",
-      "section": "Короткие видео",
-      "id": "shorts-beauty-2",
-      "video": "../videos/shorts-beauty-2.mp4",
-      "poster": "media/intake-2026-09-13/shorts-beauty-2.jpg",
-      "preview": "../videos/shorts-beauty-2.preview.mp4"
-    }
-  ],
+  "featured": [],
   "showreel": {
-    "video": "media/showreel/agency-reel-v3.mp4",
-    "poster": "media/showreel/poster-v3.jpg"
+    "video": "media/showreel/agency-reel-v4.mp4",
+    "poster": "media/showreel/poster-v4.jpg"
   }
 }
