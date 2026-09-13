@@ -252,7 +252,9 @@ dialog{border:0;background:var(--paper);color:var(--ink);padding:0;width:min(108
 .gallery-instagram .image-open img{height:min(610px,67dvh);max-height:none;object-fit:contain}
 .gallery-instagram .carousel-controls{margin:12px 0 0;justify-content:center}
 .gallery-instagram figcaption{padding:10px 12px;font-size:13px;text-align:center}
-.gallery-covers .gallery-slide{flex-basis:72%}
+.gallery-covers .gallery-slide,.gallery-photos .gallery-slide{flex-basis:72%}
+.gallery-photos .carousel{max-width:560px}
+.gallery-photos .image-open img{height:auto;max-height:none;aspect-ratio:4/5}
 .gallery-covers .image-open img{height:auto;aspect-ratio:16/9}
 #large-image{height:calc(90dvh - 160px);touch-action:pan-y pinch-zoom}
 .image-navigation{display:flex;align-items:center;justify-content:center;gap:24px;padding:12px 20px}
@@ -274,7 +276,7 @@ dialog{border:0;background:var(--paper);color:var(--ink);padding:0;width:min(108
  .gallery-instagram>.carousel{max-width:540px;margin-inline:auto}
  .gallery-instagram .image-open img{height:min(570px,62dvh)}
  .gallery-instagram>.chapter-intro{margin-bottom:14px}
- .gallery-covers .gallery-slide{flex-basis:100%}
+ .gallery-covers .gallery-slide,.gallery-photos .gallery-slide{flex-basis:100%}
  .gallery-covers .image-open img{max-height:none;height:auto}
  #projects-title{font-size:clamp(30px,7.9vw,42px)}
  #editing-title{font-size:clamp(26px,6.65vw,40px);letter-spacing:-1px;white-space:nowrap}

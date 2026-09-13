@@ -163,10 +163,9 @@
       ],
       "result": "Проект получал готовый контент для рекламы, сайта, презентации компании и знакомства с продуктом.",
       "cover": {
-        "layout": "brand-event",
+        "layout": "still",
         "images": [
-          "media/case-covers-v2/hash-brand.jpg",
-          "media/case-covers-v2/hash-event.jpg"
+          "media/case-covers-v2/hash-instruction.jpg"
         ]
       },
       "works": [
@@ -231,7 +230,7 @@
           "section": "Видеоинструкция",
           "id": "edu-product-tutorial",
           "video": "../videos/edu-product-tutorial.mp4",
-          "poster": "../videos/edu-product-tutorial.jpg",
+          "poster": "media/case-covers-v2/hash-instruction.jpg",
           "preview": "../videos/edu-product-tutorial.preview.mp4"
         }
       ]
@@ -281,7 +280,7 @@
         {
           "title": "Продукт в кадре",
           "intro": "Предметные сцены на природе: цвет упаковки, свет и детали.",
-          "layout": "instagram",
+          "layout": "photos",
           "items": [
             {
               "title": "Продуктовая съёмка · в лесу",
@@ -358,7 +357,7 @@
         },
         {
           "title": "Spider-Gwen · креативный макияж",
-          "section": "Короткие видео",
+          "section": "Макияж и обзоры",
           "id": "lyolkam-5n5NuJ2VFTo",
           "video": "media/showcase/lyolkam-5n5NuJ2VFTo.mp4",
           "poster": "media/showcase/lyolkam-5n5NuJ2VFTo.jpg",
@@ -366,7 +365,7 @@
         },
         {
           "title": "Beauty Bomb × Смешарики · обзор",
-          "section": "Короткие видео",
+          "section": "Макияж и обзоры",
           "id": "lyolkam-7ej4fkj9Q2U",
           "video": "media/showcase/lyolkam-7ej4fkj9Q2U.mp4",
           "poster": "media/showcase/lyolkam-7ej4fkj9Q2U.jpg",
@@ -374,7 +373,7 @@
         },
         {
           "title": "Макияж крупным планом",
-          "section": "Короткие видео",
+          "section": "Макияж и обзоры",
           "id": "lyolkam-makeup-detail",
           "video": "media/intake-2026-09-13/lyolkam-makeup-detail.mp4",
           "poster": "media/intake-2026-09-13/lyolkam-makeup-detail.jpg",
@@ -382,7 +381,7 @@
         },
         {
           "title": "Get Ready With Me",
-          "section": "Короткие видео",
+          "section": "Макияж и обзоры",
           "id": "lyolkam-get-ready",
           "video": "media/intake-2026-09-13/lyolkam-get-ready.mp4",
           "poster": "media/intake-2026-09-13/lyolkam-get-ready.jpg",
